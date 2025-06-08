@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matthieu Chaldebas | Computational Biologist & Bioinformatician</title
+    <title>Matthieu Chaldebas, MSc | Online CV</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:wght@600&display=swap" rel="stylesheet">
@@ -14,19 +14,16 @@
 
 <body>
 
-    <!-- HERO / ABOUT SECTION -->
+    <!-- HERO SECTION -->
     <section id="hero">
         <div class="container hero-container">
             <div class="hero-image">
             </div>
             <div class="hero-text">
-                <h1>Matthieu Chaldebas</h1>
-                <p class="hero-subtitle">PhD Candidate.</p>
-                <p class="hero-about">
-                    Operating at the forefront of computational biology at Rockefeller University, I specialize in creating robust, reproducible analytical solutions that accelerate the research and discovery process for scientific teams.
-                </p>
+                <h1>Matthieu Chaldebas, MSc</h1>
+                <p class="hero-subtitle">Computational Biologist specializing in human genetics and high-throughput data analysis.</p>
                 <div class="contact-links">
-                    <a href="mailto:mchaldebas@rockefeller.edu" class="button-primary"><i class="fas fa-envelope"></i> Email Me</a>
+                    <a href="mailto:Matthieu.Chaldebas@gmail.com" class="button-primary"><i class="fas fa-envelope"></i> Email Me</a>
                     <a href="https://www.linkedin.com/in/matthieu-chaldebas-944092137" target="_blank" class="button-secondary"><i class="fab fa-linkedin"></i> LinkedIn</a>
                     <a href="https://github.com/mchaldebas" target="_blank" class="button-secondary"><i class="fab fa-github"></i> GitHub</a>
                 </div>
@@ -34,65 +31,121 @@
         </div>
     </section>
 
-    <!-- SKILLS SECTION -->
-    <section id="skills">
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience">
         <div class="container">
-            <h2>Core Competencies</h2>
-            <div class="skill-groups">
-                <div class="skill-group">
-                    <h3>Genomics & NGS</h3>
-                    <div class="skills-grid">
-                        <span class="skill-badge">RNA-seq (bulk & sc)</span>
-                        <span class="skill-badge">WGS / WES</span>
-                        <span class="skill-badge">Variant Calling</span>
-                        <span class="skill-badge">Multi-omics</span>
+            <h2>Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Bioinformatics Assistant</h3>
+                        <p class="timeline-meta">The Rockefeller University, New York, USA | 2021 – Present</p>
+                        <ul>
+                            <li>Operate bioinformatics pipelines for variant calling and annotation from over 26,000 WES/WGS datasets.</li>
+                            <li>Conduct bulk and single-cell RNA-seq analyses to generate transcriptomic insights across diverse projects.</li>
+                            <li>Collaborate with multidisciplinary teams to design and implement custom analytical pipelines.</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="skill-group">
-                    <h3>Development & Pipelines</h3>
-                    <div class="skills-grid">
-                        <span class="skill-badge">Bash</span>
-                        <span class="skill-badge">HPC / Slurm</span>
-                        <span class="skill-badge">Git</span>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Data Scientist Intern</h3>
+                        <p class="timeline-meta">BioMérieux, Lyon, France | 6 Months – 2021</p>
+                        <ul>
+                            <li>Optimized supervised machine learning models to increase predictive accuracy for antibiotic resistance.</li>
+                            <li>Enhanced cross-validation to account for phylogenetic factors, improving model generalization.</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="skill-group">
-                    <h3>Languages & Data Science</h3>
-                    <div class="skills-grid">
-                        <span class="skill-badge">Python</span>
-                        <span class="skill-badge">R</span>
-                        <span class="skill-badge">Machine Learning</span>
-                        <span class="skill-badge">Data Visualization</span>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Data Engineer Intern</h3>
+                        <p class="timeline-meta">CEA, Paris Saclay, France | 4 Months – 2019</p>
+                        <ul>
+                            <li>Managed biological datasets, performed phylogenetic analysis, and created 3D protein models.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PROJECT SHOWCASE SECTION -->
-    <section id="projects">
+    <!-- PUBLICATIONS SECTION -->
+    <section id="publications">
         <div class="container">
-            <h2>Project Showcase</h2>
-            <div class="project-card">
-                <h3>5ULTRA: A Machine-Learning Tool for Variant Prioritization</h3>
-                <div class="project-content">
-                    <h4>Problem</h4>
-                    <p>Genetic researchers frequently face the challenge of interpreting 5'UTR variants. While significant, they are often overlooked because existing tools lacked a reliable scoring method for prioritizing candidates.</p>
-                    <h4>Action</h4>
-                    <p>To address this critical gap, I developed 5ULTRA, a comprehensive method using Python and a Random Forest model.</p>
-                    <h4>Result</h4>
-                    <ul class="result-list">
-                        <li><i class="fas fa-chart-line"></i><div><strong>High Accuracy:</strong> Achieved a high ROC-AUC of 0.79 and strong correlation (ρ = 0.56) with experimental pQTL data.</div></li>
-                        <li><i class="fas fa-lightbulb"></i><div><strong>Enabled Novel Discoveries:</strong> Successfully applied to explain variants in cancer, GWAS, and rare infectious diseases.</div></li>
-                    </ul>
+            <h2>Publications & Research Highlights</h2>
+
+            <!-- Featured Publication 1 -->
+            <article class="publication-card featured">
+                <div class="publication-tag">Featured Publication</div>
+                <h3>Genome-wide detection of human intronic AG-gain variants located between splicing branchpoints and canonical splice acceptor sites</h3>
+                <p class="publication-meta">Zhang P, <strong>Chaldebas M*</strong>, Ogishi M*, et al. (*Equal contributions) <br><em>PNAS</em>, 2023.</p>
+                <div class="contribution-highlight">
+                    <p><strong>My Contribution:</strong> As a second author, I contributed to the development and validation of the AGAIN software. My role involved performing data analysis on WES/WGS datasets, developing some key features, and validating variant impacts.</p>
                 </div>
-                <div class="project-footer">
-                    <div class="project-tags">
-                        <span>Python</span><span>Machine Learning</span><span>Snakemake</span><span>Bioinformatics</span>
-                    </div>
-                    <a href="[LINK_TO_YOUR_PAPER]" class="publication-link" target="_blank">
-                        View Publication <i class="fas fa-arrow-right"></i>
-                    </a>
+                <div class="publication-links">
+                    <a href="https://doi.org/10.1073/pnas.2314225120" target="_blank">View on PNAS <i class="fas fa-arrow-right"></i></a>
+                    <a href="https://github.com/casanova-lab/AGAIN" target="_blank">View on GitHub <i class="fab fa-github"></i></a>
+                </div>
+            </article>
+
+            <!-- Featured Publication 2 -->
+            <article class="publication-card">
+                <h3>Genome-wide selection of human 5'UTR candidate variants</h3>
+                <p class="publication-meta"><strong>Matthieu Chaldebas</strong>, Khoren Ponsin, Jonathan Bohlen, et al.<br><em>(Manuscript in preparation)</em></p>
+                <div class="contribution-highlight">
+                    <p><strong>My Contribution:</strong> As first author, I led the project from conception to execution. I developed the 5ULTRA tool, designed the machine-learning model, performed all computational analyses and validations, and wrote the manuscript.</p>
+                </div>
+                <div class="publication-links">
+                    <a href="https://github.com/casanova-lab/5ULTRA" target="_blank">View on GitHub <i class="fab fa-github"></i></a>
+                </div>
+            </article>
+            
+            <!-- Section to solve your "lost in the authors" problem -->
+            <article class="publication-card">
+                 <h3>Collaborative Research Contributions</h3>
+                 <p class="publication-meta">In numerous collaborative projects, I have provided key bioinformatics expertise. My specific roles, often focused on large-scale sequencing data, include:</p>
+                 <div class="contribution-highlight">
+                    <p><strong>Core Responsibilities:</strong></p>
+                    <ul>
+                        <li><strong>WES/WGS Analysis:</strong> Executed germline variant calling, annotation, and filtering for cohort studies to identify candidate disease-causing variants.</li>
+                        <li><strong>RNA-seq Analysis:</strong> Performed differential gene expression, pathway analysis, and visualization to interpret functional consequences of genetic variants or treatments.</li>
+                    </ul>
+                 </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- SKILLS & EDUCATION SECTION -->
+    <section id="skills-education">
+        <div class="container skills-education-grid">
+            <div class="skills-column">
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    <span class="skill-badge">WES / WGS</span>
+                    <span class="skill-badge">scRNA-seq</span>
+                    <span class="skill-badge">Python</span>
+                    <span class="skill-badge">R</span>
+                    <span class="skill-badge">Bash</span>
+                    <span class="skill-badge">HPC</span>
+                    <span class="skill-badge">Machine Learning</span>
+                    <span class="skill-badge">Git</span>
+                </div>
+            </div>
+            <div class="education-column">
+                <h2>Education & Leadership</h2>
+                <div class="education-item">
+                    <h3>PhD Candidate, Bioinformatics</h3>
+                    <p>Université Paris Cité, France (2022-Present)</p>
+                </div>
+                <div class="education-item">
+                    <h3>MSc, Biotechnology Engineering</h3>
+                    <p>Sup'Biotech, Paris, France (2016-2021)</p>
+                </div>
+                <div class="education-item">
+                    <h3>Vice-President, Tech My Wine Club</h3>
+                    <p>Led a team organizing wine tasting events, managing budget, and logistics. (2020-2021)</p>
                 </div>
             </div>
         </div>
