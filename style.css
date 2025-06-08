@@ -54,15 +54,55 @@ h2::after {
 
 /* --- 3. HERO SECTION --- */
 #hero {
-    background-color: var(--bg-light);
-    padding: 100px 0;
+    /* Background Image & Overlay */
+    background-image: linear-gradient(rgba(10, 25, 47, 0.75), rgba(10, 25, 47, 0.75)), url('hero-background.png');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+
+    padding: 120px 0;
 }
-.hero-container { display: grid; grid-template-columns: 1fr 1.5fr; align-items: center; gap: 60px; }
-.hero-image img { width: 100%; max-width: 350px; border-radius: 50%; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
-h1 { font-size: 3.5rem; color: var(--text-dark); line-height: 1.1; margin-bottom: 15px; }
-.hero-subtitle { font-size: 1.5rem; color: var(--text-light); margin-bottom: 25px; }
-.hero-about { font-size: 1.1rem; max-width: 600px; margin-bottom: 40px; }
-.contact-links { display: flex; gap: 15px; }
+
+.hero-container { 
+    display: grid; 
+    grid-template-columns: 1fr 1.5fr; 
+    align-items: center; 
+    gap: 60px; 
+}
+
+.hero-image img { 
+    width: 100%; 
+    max-width: 350px; 
+    border-radius: 50%; 
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2); 
+    border: 5px solid rgba(255, 255, 255, 0.8);
+}
+
+h1 { 
+    font-size: 3.5rem; 
+    color: #ffffff;
+    line-height: 1.1; 
+    margin-bottom: 15px; 
+}
+
+.hero-subtitle { 
+    font-size: 1.5rem; 
+    color: #cdd6f4;
+    margin-bottom: 25px; 
+}
+
+.hero-about { 
+    font-size: 1.1rem; 
+    max-width: 600px; 
+    margin-bottom: 40px; 
+    color: #a6b0d9; 
+}
+
+.contact-links { 
+    display: flex; 
+    gap: 15px; 
+}
+
 .button-primary, .button-secondary {
     padding: 12px 25px;
     border-radius: 8px;
@@ -73,36 +113,26 @@ h1 { font-size: 3.5rem; color: var(--text-dark); line-height: 1.1; margin-bottom
     align-items: center;
     gap: 8px;
 }
-.button-primary { background-color: var(--primary-color); color: white; }
-.button-primary:hover { background-color: var(--secondary-color); transform: translateY(-2px); }
-.button-secondary { background-color: transparent; color: var(--text-light); border: 1px solid var(--border-color); }
-.button-secondary:hover { background-color: var(--bg-dark); color: var(--primary-color); }
 
-/* --- HERO SECTION BACKGROUND IMAGE --- */
-#hero {
-    background-image: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.7)), url('hero-background.png');
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    padding: 100px 0;
-}
-#hero h1, #hero .hero-subtitle, #hero .hero-about {
-    color: #ffffff;
-}
-#hero .hero-about {
-    color: #cdd6f4;
-}
-#hero .button-primary {
+.button-primary { 
     background-color: #58a6ff;
     color: #0d1117;
 }
-#hero .button-secondary {
-    background-color: transparent;
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+
+.button-primary:hover { 
+    background-color: #ffffff; 
+    transform: translateY(-2px); 
 }
-#hero .button-secondary:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+
+.button-secondary { 
+    background-color: transparent; 
+    color: #ffffff; 
+    border: 1px solid rgba(255, 255, 255, 0.5); 
+}
+
+.button-secondary:hover { 
+    background-color: rgba(255, 255, 255, 0.1); 
+    border-color: #ffffff;
 }
 
 /* --- 4. SKILLS SECTION --- */
