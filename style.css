@@ -164,6 +164,35 @@ section + section {
     text-decoration: none;
 }
 
+.project-card h4 {
+    font-family: var(--font-family-sans);
+    font-size: 0.9em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--secondary-color);
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+.result-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.result-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.result-list .fas {
+    color: #28a745;
+    font-size: 1.2em;
+    margin-top: 4px; 
+}
+
 /* --- 8. RESPONSIVE DESIGN --- */
 @media (max-width: 768px) {
     body { padding: 0; }
