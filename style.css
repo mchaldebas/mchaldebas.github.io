@@ -78,6 +78,33 @@ h1 { font-size: 3.5rem; color: var(--text-dark); line-height: 1.1; margin-bottom
 .button-secondary { background-color: transparent; color: var(--text-light); border: 1px solid var(--border-color); }
 .button-secondary:hover { background-color: var(--bg-dark); color: var(--primary-color); }
 
+/* --- HERO SECTION BACKGROUND IMAGE --- */
+#hero {
+    background-image: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.7)), url('hero-background.png');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    padding: 100px 0;
+}
+#hero h1, #hero .hero-subtitle, #hero .hero-about {
+    color: #ffffff;
+}
+#hero .hero-about {
+    color: #cdd6f4;
+}
+#hero .button-primary {
+    background-color: #58a6ff;
+    color: #0d1117;
+}
+#hero .button-secondary {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+#hero .button-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
 /* --- 4. SKILLS SECTION --- */
 #skills { background-color: var(--bg-dark); padding: 80px 0; border-top: 1px solid var(--border-color); }
 .skill-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
