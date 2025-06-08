@@ -47,28 +47,24 @@
             <section id="projects">
                 <h2><i class="fas fa-flask"></i> Project Showcase</h2>
                 <div class="project-card">
-                    <h3>5ULTRA: Development of a Novel Tool for Prioritizing 5'UTR Variants</h3>
-                    <p>
-                        <strong>Problem:</strong> Genetic researchers frequently face the challenge of interpreting variants in 5' Untranslated Regions (5'UTRs). While these variants can significantly impact protein translation and cause disease, they are often overlooked because existing computational tools lacked the scope to analyze all relevant variant types (including splicing), did not integrate the latest uORF databases, and failed to provide a reliable score for prioritizing candidates.
-                    </p>
-                    <p>
-                        <strong>Action:</strong> To address this critical gap, I developed 5ULTRA, a comprehensive computational method for analyzing WES and WGS data. Using Python and a machine-learning (Random Forest) model, I built a pipeline that:
-                    </p>
+                    <h3>5ULTRA: A Machine-Learning Tool for Variant Prioritization</h3>
+                    
+                    <h4>Problem</h4>
+                    <p>Genetic researchers frequently face the challenge of interpreting 5'UTR variants. While significant, they are often overlooked because existing tools lacked the scope and a reliable scoring method for prioritizing candidates.</p>
+                    
+                    <h4>Action</h4>
+                    <p>To address this critical gap, I developed 5ULTRA, a comprehensive method using Python and a Random Forest model. The pipeline:</p>
                     <ul>
-                        <li>Systematically annotates SNVs, indels, and splicing variants predicted to impact upstream open reading frames (uORFs) or Kozak sequences.</li>
-                        <li>Integrates the most recent and comprehensive uORF databases for accurate context.</li>
-                        <li>Implements a novel, validated machine-learning score to rank variants by their predicted functional impact on translation.</li>
+                        <li>Systematically annotates SNVs, indels, and splicing variants.</li>
+                        <li>Integrates the most recent and comprehensive uORF databases.</li>
+                        <li>Implements a novel, validated machine-learning score to rank variants.</li>
                     </ul>
-                    <p>
-                        The tool is publicly available as both a command-line utility for pipeline integration and a user-friendly web server.
-                    </p>
-                    <p>
-                        <strong>Result:</strong> 5ULTRA demonstrated superior performance and delivered tangible biological insights.
-                    </p>
-                    <ul>
-                        <li><strong>High Accuracy:</strong> Achieved a high ROC-AUC of 0.79 on an independent ClinVar dataset and a strong correlation (Spearman's ρ = 0.56) with experimentally measured protein levels (pQTL data).</li>
-                        <li><strong>Enabled Novel Discoveries:</strong> Successfully applied to identify and provide mechanistic explanations for candidate variants in cancer (COSMIC), common traits (GWAS), and rare infectious diseases (e.g., a variant in <em>TNF</em> in a tuberculosis patient).</li>
-                        <li><strong>Publication:</strong> This work is the basis of my first-author manuscript, "Genome-wide selection of human 5'UTR candidate variants." (<a href="[LINK TO YOUR PAPER, e.g., on bioRxiv or the journal site]" target="_blank">View Paper</a>)</li>
+                
+                    <h4>Result</h4>
+                    <ul class="result-list">
+                        <li><i class="fas fa-chart-line"></i> <strong>High Accuracy:</strong> Achieved a high ROC-AUC of 0.79 and a strong correlation (ρ = 0.56) with experimental pQTL data.</li>
+                        <li><i class="fas fa-lightbulb"></i> <strong>Enabled Novel Discoveries:</strong> Applied to explain variants in cancer (COSMIC), common traits (GWAS), and rare infectious diseases.</li>
+                        <li><i class="fas fa-award"></i> <strong>First-Author Publication:</strong> This work is the basis of my manuscript, "Genome-wide selection of human 5'UTR candidate variants." (<a href="[LINK]" target="_blank">View Paper</a>)</li>
                     </ul>
                 </div>
             </section>
