@@ -175,9 +175,9 @@ section + section {
     margin-bottom: 8px;
 }
 
-.result-list {
-    list-style-type: none;
-    padding-left: 0;
+.result-list .fas {
+    color: #28a745;
+    font-size: 1.2em;
 }
 
 .result-list li {
@@ -191,6 +191,11 @@ section + section {
     color: #28a745;
     font-size: 1.2em;
     margin-top: 4px; 
+}
+
+.paper-link {
+    font-weight: 600;
+    white-space: nowrap;
 }
 
 /* --- 8. RESPONSIVE DESIGN --- */
