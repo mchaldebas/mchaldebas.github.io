@@ -40,14 +40,11 @@ h2 {
 
 /* --- 3. HERO SECTION --- */
 #hero {
-    /* Background Image & Overlay */
     background-image: linear-gradient(rgba(10, 25, 47, 0.75), rgba(10, 25, 47, 0.75)), url('hero-background.png');
     background-size: cover;
     background-position: center center;
-    background-attachment: fixed; /* Creates parallax effect */
-    
-    /* Layout */
-    padding: 120px 0; /* A bit more padding for a grander feel */
+    background-attachment: fixed;
+    padding: 120px 0;
 }
 .hero-container { display: flex; flex-direction: column; align-items: center; }
 .hero-image img { width: 180px; height: 180px; border-radius: 50%; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 30px; }
