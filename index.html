@@ -4,123 +4,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matthieu Chaldebas | Bioinformatician & Computational Biologist</title>
+    <title>Matthieu Chaldebas | Computational Biologist & Bioinformatician</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="container">
-        <header class="profile-header">
-            <div class="profile-text">
-                <h1>Matthieu Chaldebas</h1>
-                <p>Bioinformatics & Computational Biology</p>
+
+    <!-- HERO / ABOUT SECTION -->
+    <section id="hero">
+        <div class="container hero-container">
+            <div class="hero-image">
+                <img src="profile.jpg" alt="Matthieu Chaldebas">
             </div>
-        </header>
-        <main>
-            <section id="about" class="fade-in-section">
-                <h2><i class="fas fa-user-circle"></i> About Me</h2>
-                <p>
-                    As a PhD Candidate in Bioinformatics at Rockefeller University, I operate at the forefront of computational biology. I specialize in transforming complex, high-throughput data into clear, reproducible, and biologically relevant insights.
+            <div class="hero-text">
+                <h1>Matthieu Chaldebas</h1>
+                <p class="hero-subtitle">PhD Candidate transforming complex biological data into actionable insights.</p>
+                <p class="hero-about">
+                    Operating at the forefront of computational biology at Rockefeller University, I specialize in creating robust, reproducible analytical solutions that accelerate the research and discovery process for scientific teams.
                 </p>
-            </section>
-            <section id="services" class="fade-in-section">
-                <h2><i class="fas fa-cogs"></i> Skills</h2>
-                <div class="skills-grid">
-                    <span class="skill-badge">NGS Analysis</span>
-                    <span class="skill-badge">RNA-seq (bulk & sc)</span>
-                    <span class="skill-badge">WGS / WES</span>
-                    <span class="skill-badge">Variant Calling</span>
-                    <span class="skill-badge">Multi-omics</span>
-                    <span class="skill-badge">Python</span>
-                    <span class="skill-badge">R</span>
-                    <span class="skill-badge">HPC / Slurm</span>
-                    <span class="skill-badge">Git</span>
-                    <span class="skill-badge">Machine Learning</span>
+                <div class="contact-links">
+                    <a href="mailto:mchaldebas@rockefeller.edu" class="button-primary"><i class="fas fa-envelope"></i> Email Me</a>
+                    <a href="https://www.linkedin.com/in/matthieu-chaldebas-944092137" target="_blank" class="button-secondary"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com/mchaldebas" target="_blank" class="button-secondary"><i class="fab fa-github"></i> GitHub</a>
                 </div>
-            </section>
-            <section id="projects" class="fade-in-section">
-                <h2><i class="fas fa-flask"></i> Project Showcase</h2>
-                <div class="project-card">
-                    <h3>5ULTRA: A Machine-Learning Tool for Variant Prioritization</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills">
+        <div class="container">
+            <h2>Core Competencies</h2>
+            <div class="skill-groups">
+                <div class="skill-group">
+                    <h3>Genomics & NGS</h3>
+                    <div class="skills-grid">
+                        <span class="skill-badge">RNA-seq (bulk & sc)</span>
+                        <span class="skill-badge">WGS / WES</span>
+                        <span class="skill-badge">Variant Calling</span>
+                        <span class="skill-badge">Multi-omics</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3>Development & Pipelines</h3>
+                    <div class="skills-grid">
+                        <span class="skill-badge">Nextflow / Snakemake</span>
+                        <span class="skill-badge">Docker</span>
+                        <span class="skill-badge">HPC / Slurm</span>
+                        <span class="skill-badge">Git</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3>Languages & Data Science</h3>
+                    <div class="skills-grid">
+                        <span class="skill-badge">Python</span>
+                        <span class="skill-badge">R</span>
+                        <span class="skill-badge">Machine Learning</span>
+                        <span class="skill-badge">Data Visualization</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECT SHOWCASE SECTION -->
+    <section id="projects">
+        <div class="container">
+            <h2>Project Showcase</h2>
+            <div class="project-card">
+                <h3>5ULTRA: A Machine-Learning Tool for Variant Prioritization</h3>
+                <div class="project-content">
                     <h4>Problem</h4>
-                    <p>Genetic researchers frequently face the challenge of interpreting 5'UTR variants. While significant, they are often overlooked because existing tools lacked the scope and a reliable scoring method for prioritizing candidates.</p>
+                    <p>Genetic researchers frequently face the challenge of interpreting 5'UTR variants. While significant, they are often overlooked because existing tools lacked a reliable scoring method for prioritizing candidates.</p>
                     <h4>Action</h4>
-                    <p>To address this critical gap, I developed 5ULTRA, a comprehensive method using Python and a Random Forest model. The pipeline:</p>
-                    <ul>
-                        <li>Systematically annotates SNVs, indels, and splicing variants.</li>
-                        <li>Integrates the most recent and comprehensive uORF databases.</li>
-                        <li>Implements a novel, validated machine-learning score to rank variants.</li>
-                    </ul>
+                    <p>To address this critical gap, I developed 5ULTRA, a comprehensive method using Python and a Random Forest model.</p>
                     <h4>Result</h4>
                     <ul class="result-list">
-                        <li>
-                            <i class="fas fa-chart-line"></i>
-                            <div> 
-                                <strong>High Accuracy:</strong> Achieved a high ROC-AUC of 0.79 and a strong correlation (ρ = 0.56) with experimental pQTL data.
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-lightbulb"></i>
-                            <div>
-                                <strong>Enabled Novel Discoveries:</strong> Successfully applied to explain variants in cancer (COSMIC), common traits (GWAS), and rare infectious diseases.
-                            </div>
-                        </li>
+                        <li><i class="fas fa-chart-line"></i><div><strong>High Accuracy:</strong> Achieved a high ROC-AUC of 0.79 and strong correlation (ρ = 0.56) with experimental pQTL data.</div></li>
+                        <li><i class="fas fa-lightbulb"></i><div><strong>Enabled Novel Discoveries:</strong> Successfully applied to explain variants in cancer, GWAS, and rare infectious diseases.</div></li>
                     </ul>
                 </div>
-            </section>
-            <section id="publications" class="fade-in-section">
-                <h2><i class="fas fa-book-open"></i> Publications</h2>
-                <div class="publication-item">
-                    <h3>Genome-wide selection of human 5'UTR candidate variants</h3>
-                    <p class="publication-meta">
-                        <strong>Matthieu Chaldebas</strong>, Khoren Ponsin, Jonathan Bohlen, et al.
-                        <br>
-                        <em>Journal, 2025</em>
-                    </p>
+                <div class="project-footer">
+                    <div class="project-tags">
+                        <span>Python</span><span>Machine Learning</span><span>Snakemake</span><span>Bioinformatics</span>
+                    </div>
                     <a href="[LINK_TO_YOUR_PAPER]" class="publication-link" target="_blank">
-                        View Publication <i class="fas fa-external-link-alt"></i>
+                        View Publication <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
-            </section>
-            <section id="contact" class="fade-in-section">
-                <h2><i class="fas fa-envelope"></i> Contact</h2>
-                <p>I'm always open to discussing new projects and collaborations. Feel free to reach out.</p>
-                <div class="contact-links">
-                    <a href="mailto:mchaldebas@rockefeller.edu" aria-label="Email">
-                        <i class="fas fa-envelope"></i> Email Me
-                    </a>
-                    <a href="https://www.linkedin.com/in/matthieu-chaldebas-944092137" target="_blank" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
-                    <a href="https://github.com/mchaldebas" target="_blank" aria-label="GitHub">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                </div>
-            </section>
-        </main>
-    </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const sections = document.querySelectorAll('.fade-in-section');
+            </div>
+        </div>
+    </section>
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
-
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-        });
-    </script>
 </body>
 </html>
