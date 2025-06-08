@@ -5,15 +5,15 @@
 
 /* --- 1. THEME & VARIABLES --- */
 :root {
-    --bg-color: #f4f7f6;
+    --bg-color: #f8f9fa;
     --card-bg-color: #ffffff;
-    --primary-color: #0d6efd;
-    --secondary-color: #6c757d;
+    --primary-color: #2c3e50;
+    --secondary-color: #5a6875;
     --text-color: #212529;
-    --heading-color: #212529;
+    --heading-color: #2c3e50;
     --border-color: #e9ecef;
-    --skill-bg-color: #e7f0ff;
-    --skill-text-color: #0056b3;
+    --skill-bg-color: #eaf0f6;
+    --skill-text-color: #2c3e50;
     
     --font-family-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --font-family-serif: "Lora", "Georgia", serif;
@@ -188,9 +188,8 @@ section + section {
 }
 
 .result-list .fas {
-    color: #28a745;
+    color: var(--primary-color);
     font-size: 1.2em;
-    margin-top: 4px; 
 }
 
 .paper-link {
