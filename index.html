@@ -1,63 +1,64 @@
 <body>
-    <header>
-        <h1>Matthieu Chaldebas</h1>
-        <p style="text-align: center; font-size: 1.2em; color: #6c757d;">Bioinformatician & Computational Biologist</p>
-    </header>
+    <div class="container">
+        <header>
+            <h1>Matthieu Chaldebas</h1>
+            <p style="text-align: center; font-size: 1.2em; color: #6c757d;">Bioinformatician & Computational Biologist</p>
+        </header>
+        <main>
+            <section id="about">
+                <h2>About Me</h2>
+                <p>
+                    As a PhD Candidate in Bioinformatics at Rockefeller University, I operate at the forefront of computational biology. I specialize in transforming complex, high-throughput data into clear, reproducible, and biologically relevant insights. I am passionate about creating robust analytical solutions to help research teams accelerate their discovery process.
+                </p>
+            </section>
+            <section id="services">
+                <h2>Skills</h2>
+                <ul>
+                    <li><strong>NGS Analysis:</strong> End-to-end analysis of RNA-seq (bulk & single-cell), WGS/WES, and Variant Calling.</li>
+                    <li><strong>Data Integration:</strong> Multi-omics analysis, pathway and network analysis (GSEA, etc.).</li>
+                    <li><strong>Reproducible Pipelines:</strong> Building and deploying scalable workflows with <strong>Nextflow/Snakemake & Docker</strong>.</li>
+                    <li><strong>Technical Stack:</strong> Python (Pandas, Scikit-learn), R (Tidyverse, Bioconductor), Git, and high-performance computing (HPC/Slurm).</li>
+                </ul>
+            </section>
+            <section id="projects">
+                <h2>Project Showcase</h2>
     
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>
-                As a PhD Candidate in Bioinformatics at Rockefeller University, I operate at the forefront of computational biology. I specialize in transforming complex, high-throughput data into clear, reproducible, and biologically relevant insights. I am passionate about creating robust analytical solutions to help research teams accelerate their discovery process.
-            </p>
-        </section>
-        <section id="services">
-            <h2>Skills</h2>
-            <ul>
-                <li><strong>NGS Analysis:</strong> End-to-end analysis of RNA-seq (bulk & single-cell), WGS/WES, and Variant Calling.</li>
-                <li><strong>Data Integration:</strong> Multi-omics analysis, pathway and network analysis (GSEA, etc.).</li>
-                <li><strong>Reproducible Pipelines:</strong> Building and deploying scalable workflows with <strong>Nextflow/Snakemake & Docker</strong>.</li>
-                <li><strong>Technical Stack:</strong> Python (Pandas, Scikit-learn), R (Tidyverse, Bioconductor), Git, and high-performance computing (HPC/Slurm).</li>
-            </ul>
-        </section>
-        <section id="projects">
-            <h2>Project Showcase</h2>
-
-            <div class="project-card">
-                <h3>5ULTRA: Development of a Novel Tool for Prioritizing 5'UTR Variants</h3>
+                <div class="project-card">
+                    <h3>5ULTRA: Development of a Novel Tool for Prioritizing 5'UTR Variants</h3>
+                    <p>
+                        <strong>Problem:</strong> Genetic researchers frequently face the challenge of interpreting variants in 5' Untranslated Regions (5'UTRs). While these variants can significantly impact protein translation and cause disease, they are often overlooked because existing computational tools lacked the scope to analyze all relevant variant types (including splicing), did not integrate the latest uORF databases, and failed to provide a reliable score for prioritizing candidates.
+                    </p>
+                    <p>
+                        <strong>Action:</strong> To address this critical gap, I developed 5ULTRA, a comprehensive computational method for analyzing WES and WGS data. Using Python and a machine-learning (Random Forest) model, I built a pipeline that:
+                        <ul>
+                            <li>Systematically annotates SNVs, indels, and splicing variants predicted to impact upstream open reading frames (uORFs) or Kozak sequences.</li>
+                            <li>Integrates the most recent and comprehensive uORF databases for accurate context.</li>
+                            <li>Implements a novel, validated machine-learning score to rank variants by their predicted functional impact on translation.</li>
+                        </ul>
+                        The tool is publicly available as both a command-line utility for pipeline integration and a user-friendly web server.
+                    </p>
+                    <p>
+                        <strong>Result:</strong> 5ULTRA demonstrated superior performance and delivered tangible biological insights.
+                        <ul>
+                            <li><strong>High Accuracy:</strong> Achieved a high ROC-AUC of 0.79 on an independent ClinVar dataset and a strong correlation (Spearman's ρ = 0.56) with experimentally measured protein levels (pQTL data).</li>
+                            <li><strong>Enabled Novel Discoveries:</strong> Successfully applied to identify and provide mechanistic explanations for candidate variants in cancer (COSMIC), common traits (GWAS), and rare infectious diseases (e.g., a variant in <em>TNF</em> in a tuberculosis patient).</li>
+                            <li><strong>Publication:</strong> This work is the basis of my first-author manuscript, "Genome-wide selection of human 5'UTR candidate variants." (<a href="[LINK TO YOUR PAPER, e.g., on bioRxiv or the journal site]" target="_blank">View Paper</a>)</li>
+                        </ul>
+                    </p>
+                </div>
+                
+                <!-- Add another project card here -->
+    
+            </section>
+            <section id="contact">
+                <h2>Contact</h2>
+                <p>I'm always open to discussing new projects and collaborations. Feel free to reach out.</p>
                 <p>
-                    <strong>Problem:</strong> Genetic researchers frequently face the challenge of interpreting variants in 5' Untranslated Regions (5'UTRs). While these variants can significantly impact protein translation and cause disease, they are often overlooked because existing computational tools lacked the scope to analyze all relevant variant types (including splicing), did not integrate the latest uORF databases, and failed to provide a reliable score for prioritizing candidates.
+                    <strong>Email:</strong> <a href="mailto:mchaldebas@rockefeller.edu">mchaldebas@rockefeller.edu</a><br>
+                    <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/matthieu-chaldebas-944092137" target="_blank">linkedin.com/in/matthieu-chaldebas</a><br>
+                    <strong>GitHub:</strong> <a href="https://github.com/mchaldebas" target="_blank">github.com/mchaldebas</a>
                 </p>
-                <p>
-                    <strong>Action:</strong> To address this critical gap, I developed 5ULTRA, a comprehensive computational method for analyzing WES and WGS data. Using Python and a machine-learning (Random Forest) model, I built a pipeline that:
-                    <ul>
-                        <li>Systematically annotates SNVs, indels, and splicing variants predicted to impact upstream open reading frames (uORFs) or Kozak sequences.</li>
-                        <li>Integrates the most recent and comprehensive uORF databases for accurate context.</li>
-                        <li>Implements a novel, validated machine-learning score to rank variants by their predicted functional impact on translation.</li>
-                    </ul>
-                    The tool is publicly available as both a command-line utility for pipeline integration and a user-friendly web server.
-                </p>
-                <p>
-                    <strong>Result:</strong> 5ULTRA demonstrated superior performance and delivered tangible biological insights.
-                    <ul>
-                        <li><strong>High Accuracy:</strong> Achieved a high ROC-AUC of 0.79 on an independent ClinVar dataset and a strong correlation (Spearman's ρ = 0.56) with experimentally measured protein levels (pQTL data).</li>
-                        <li><strong>Enabled Novel Discoveries:</strong> Successfully applied to identify and provide mechanistic explanations for candidate variants in cancer (COSMIC), common traits (GWAS), and rare infectious diseases (e.g., a variant in <em>TNF</em> in a tuberculosis patient).</li>
-                        <li><strong>Publication:</strong> This work is the basis of my first-author manuscript, "Genome-wide selection of human 5'UTR candidate variants." (<a href="[LINK TO YOUR PAPER, e.g., on bioRxiv or the journal site]" target="_blank">View Paper</a>)</li>
-                    </ul>
-                </p>
-            </div>
-            
-            <!-- Add another project card here -->
-
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>I'm always open to discussing new projects and collaborations. Feel free to reach out.</p>
-            <p>
-                <strong>Email:</strong> <a href="mailto:mchaldebas@rockefeller.edu">mchaldebas@rockefeller.edu</a><br>
-                <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/matthieu-chaldebas-944092137" target="_blank">linkedin.com/in/matthieu-chaldebas</a><br>
-                <strong>GitHub:</strong> <a href="https://github.com/mchaldebas" target="_blank">github.com/mchaldebas</a>
-            </p>
-        </section>
-    </main>
+            </section>
+        </main>
+    </div>
 </body>
