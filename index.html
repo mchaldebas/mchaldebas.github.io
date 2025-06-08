@@ -5,35 +5,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matthieu Chaldebas | Bioinformatician & Computational Biologist</title>
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css">
+    <!-- Note: Get your own free kit code from fontawesome.com for best performance, but this will work for now: -->
+    <script src="https://kit.fontawesome.com/5c9a91341a.js" crossorigin="anonymous"></script>
 </head>
-
 
 <body>
     <div class="container">
-        <header>
-            <h1>Matthieu Chaldebas</h1>
-            <p>Bioinformatician & Computational Biologist</p>
+        <header class="profile-header">
+            <img src="profile.jpg" alt="Matthieu Chaldebas" class="profile-picture">
+            <div class="profile-text">
+                <h1>Matthieu Chaldebas</h1>
+                <p>Bioinformatician & Computational Biologist</p>
+            </div>
         </header>
+
         <main>
             <section id="about">
-                <h2>About Me</h2>
+                <h2><i class="fas fa-user-circle"></i> About Me</h2>
                 <p>
                     As a PhD Candidate in Bioinformatics at Rockefeller University, I operate at the forefront of computational biology. I specialize in transforming complex, high-throughput data into clear, reproducible, and biologically relevant insights.
                 </p>
             </section>
             <section id="services">
-                <h2>Skills</h2>
-                <ul>
-                    <li><strong>NGS Analysis:</strong> End-to-end analysis of RNA-seq (bulk & single-cell), WGS/WES, and Variant Calling.</li>
-                    <li><strong>Data Integration:</strong> Multi-omics analysis, pathway and network analysis (GSEA, etc.).</li>
-                    <li><strong>Reproducible Pipelines:</strong> Building and deploying scalable workflows.</li>
-                    <li><strong>Technical Stack:</strong> Python (Pandas, Scikit-learn), R (Tidyverse, Bioconductor), Git, and high-performance computing (HPC/Slurm).</li>
-                </ul>
+                <h2><i class="fas fa-cogs"></i> Skills</h2>
+                <div class="skills-grid">
+                    <span class="skill-badge">NGS Analysis</span>
+                    <span class="skill-badge">RNA-seq (bulk & sc)</span>
+                    <span class="skill-badge">WGS / WES</span>
+                    <span class="skill-badge">Variant Calling</span>
+                    <span class="skill-badge">Multi-omics</span>
+                    <span class="skill-badge">Nextflow / Snakemake</span>
+                    <span class="skill-badge">Docker</span>
+                    <span class="skill-badge">Python</span>
+                    <span class="skill-badge">R</span>
+                    <span class="skill-badge">HPC / Slurm</span>
+                    <span class="skill-badge">Git</span>
+                    <span class="skill-badge">Machine Learning</span>
+                </div>
             </section>
+
             <section id="projects">
-                <h2>Project Showcase</h2>
-    
+                <h2><i class="fas fa-flask"></i> Project Showcase</h2>
                 <div class="project-card">
                     <h3>5ULTRA: Development of a Novel Tool for Prioritizing 5'UTR Variants</h3>
                     <p>
@@ -53,24 +66,27 @@
                     <p>
                         <strong>Result:</strong> 5ULTRA demonstrated superior performance and delivered tangible biological insights.
                     </p>
-                    <ul> 
+                    <ul>
                         <li><strong>High Accuracy:</strong> Achieved a high ROC-AUC of 0.79 on an independent ClinVar dataset and a strong correlation (Spearman's ρ = 0.56) with experimentally measured protein levels (pQTL data).</li>
                         <li><strong>Enabled Novel Discoveries:</strong> Successfully applied to identify and provide mechanistic explanations for candidate variants in cancer (COSMIC), common traits (GWAS), and rare infectious diseases (e.g., a variant in <em>TNF</em> in a tuberculosis patient).</li>
                         <li><strong>Publication:</strong> This work is the basis of my first-author manuscript, "Genome-wide selection of human 5'UTR candidate variants." (<a href="[LINK TO YOUR PAPER, e.g., on bioRxiv or the journal site]" target="_blank">View Paper</a>)</li>
                     </ul>
                 </div>
-                
-                <!-- Add another project card here -->
-    
             </section>
             <section id="contact">
-                <h2>Contact</h2>
+                <h2><i class="fas fa-envelope"></i> Contact</h2>
                 <p>I'm always open to discussing new projects and collaborations. Feel free to reach out.</p>
-                <p>
-                    <strong>Email:</strong> <a href="mailto:mchaldebas@rockefeller.edu">mchaldebas@rockefeller.edu</a><br>
-                    <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/matthieu-chaldebas-944092137" target="_blank">linkedin.com/in/matthieu-chaldebas</a><br>
-                    <strong>GitHub:</strong> <a href="https://github.com/mchaldebas" target="_blank">github.com/mchaldebas</a>
-                </p>
+                <div class="contact-links">
+                    <a href="mailto:mchaldebas@rockefeller.edu" aria-label="Email">
+                        <i class="fas fa-envelope"></i> Email Me
+                    </a>
+                    <a href="https://www.linkedin.com/in/matthieu-chaldebas-944092137" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/mchaldebas" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
             </section>
         </main>
     </div>
