@@ -175,11 +175,6 @@ section + section {
     margin-bottom: 8px;
 }
 
-.result-list .fas {
-    color: #28a745;
-    font-size: 1.2em;
-}
-
 .result-list li {
     display: flex;
     align-items: flex-start;
