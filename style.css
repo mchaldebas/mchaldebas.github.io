@@ -202,6 +202,32 @@ section + section {
     opacity: 1;
     transform: translateY(0);
 }
+.publication-item {
+    border: 1px solid var(--border-color);
+    padding: var(--spacing-unit);
+    border-radius: 8px;
+    margin-bottom: var(--spacing-unit);
+}
+
+.publication-item h3 {
+    font-family: var(--font-family-serif);
+    font-size: 1.2em;
+    color: var(--heading-color);
+    margin-bottom: 8px;
+}
+
+.publication-meta {
+    font-size: 0.95em;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.publication-link {
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
 
 /* --- END. RESPONSIVE DESIGN --- */
 @media (max-width: 768px) {
