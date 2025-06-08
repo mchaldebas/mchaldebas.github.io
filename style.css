@@ -1,55 +1,162 @@
-/* --- Basic Setup & Typography --- */
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f8f9fa; /* A light grey background */
-    color: #343a40; /* A dark grey for text */
-    max-width: 800px; /* Limits the width of content for readability */
-    margin: 40px auto; /* Centers the content on the page */
-    padding: 0 20px; /* Adds some space on the sides */
+/* --- 1. THEME & VARIABLES --- */
+:root {
+    --bg-color: #f8f9fa;               /* Light grey for the page background */
+    --card-bg-color: #ffffff;          /* Pure white for content areas */
+    --primary-color: #0056b3;           /* A professional, deep blue for links */
+    --text-color: #343a40;             /* A comfortable dark grey for body text */
+    --heading-color: #212529;          /* A near-black for strong headings */
+    --border-color: #dee2e6;           /* A subtle border/divider color */
+    
+    --font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-family-serif: "Georgia", serif;
+    
+    --spacing-unit: 20px;
 }
 
+/* --- 2. GLOBAL & TYPOGRAPHY RESETS --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family-sans);
+    line-height: 1.7; /* Increased line-height for better readability */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    padding: var(--spacing-unit);
+}
+
+/* The main content container */
+.container {
+    max-width: 850px;
+    width: 100%;
+    background-color: var(--card-bg-color);
+    padding: calc(var(--spacing-unit) * 2);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* --- 3. TYPOGRAPHY STYLES --- */
 h1, h2, h3 {
-    font-family: "Georgia", serif;
-    color: #212529; /* A slightly darker black for headings */
+    font-family: var(--font-family-serif);
+    color: var(--heading-color);
+    line-height: 1.3;
 }
 
 h1 {
-    font-size: 2.5em;
+    font-size: 2.8em;
     text-align: center;
-    margin-bottom: 0;
+    margin-bottom: 0.25em;
 }
 
 h2 {
-    border-bottom: 2px solid #dee2e6; /* A subtle line under section headers */
+    font-size: 1.8em;
+    border-bottom: 2px solid var(--border-color);
     padding-bottom: 10px;
-    margin-top: 40px;
+    margin-bottom: var(--spacing-unit);
+}
+
+h3 {
+    font-size: 1.3em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
 }
 
 a {
-    color: #007bff; /* A standard blue for links */
+    color: var(--primary-color);
     text-decoration: none;
+    transition: color 0.2s ease;
 }
 
 a:hover {
-    text-decoration: underline; /* Underline links on hover */
+    text-decoration: underline;
+    color: #003d82; /* A slightly darker blue on hover */
 }
 
-/* --- Section for Projects --- */
-.project-card {
-    background-color: #ffffff; /* White background for cards */
-    border: 1px solid #e9ecef; /* A light border */
-    border-radius: 8px; /* Rounded corners */
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.project-card h3 {
-    margin-top: 0;
-}
-
-/* --- Section for Skills List --- */
 ul {
-    list-style-type: square;
-    padding-left: 20px;
+    padding-left: var(--spacing-unit);
+}
+
+li {
+    margin-bottom: 10px; /* Adds space between list items */
+}
+
+/* --- 4. LAYOUT & SECTION STYLES --- */
+header {
+    margin-bottom: calc(var(--spacing-unit) * 2.5);
+}
+
+/* The tagline under the main name */
+header p {
+    font-size: 1.2em;
+    color: #6c757d;
+    text-align: center;
+}
+
+/* Add space between each major section */
+section + section {
+    margin-top: calc(var(--spacing-unit) * 2.5);
+}
+
+/* --- 5. COMPONENT STYLES: PROJECT CARD --- */
+.project-card {
+    background-color: #fdfdfd; /* A slightly off-white, can also be var(--card-bg-color) */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: calc(var(--spacing-unit) * 1.5);
+    margin-bottom: var(--spacing-unit);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* A subtle lift effect on hover for desktop users */
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.project-card p, .project-card ul {
+    margin-bottom: 15px; /* Consistent spacing inside the card */
+}
+
+.project-card ul {
+    list-style-type: circle; /* Differentiates lists inside cards */
+}
+
+.project-card li {
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+
+/* --- 6. RESPONSIVE DESIGN FOR MOBILE --- */
+/* Adjusts the layout for screens smaller than 768px (tablets and phones) */
+@media (max-width: 768px) {
+    body {
+        padding: 0; /* Full width on mobile */
+    }
+    
+    .container {
+        padding: var(--spacing-unit);
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    /* Disable hover-lift effect on mobile where 'hover' is not a primary interaction */
+    .project-card:hover {
+        transform: none;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
 }
