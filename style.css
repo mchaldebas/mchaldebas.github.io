@@ -15,8 +15,8 @@
     --skill-bg-color: #e7f0ff;
     --skill-text-color: #0056b3;
     
-    --font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    --font-family-serif: "Georgia", "Times New Roman", Times, serif;
+    --font-family-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-family-serif: "Lora", "Georgia", serif;
     
     --spacing-unit: 20px;
 }
