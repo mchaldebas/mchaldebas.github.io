@@ -1,28 +1,32 @@
+/*
+   Author: Matthieu Chaldebas
+   Version: 3.0
+*/
+
 /* --- 1. THEME & VARIABLES --- */
 :root {
-    --bg-color: #f8f9fa;               /* Light grey for the page background */
-    --card-bg-color: #ffffff;          /* Pure white for content areas */
-    --primary-color: #0056b3;           /* A professional, deep blue for links */
-    --text-color: #343a40;             /* A comfortable dark grey for body text */
-    --heading-color: #212529;          /* A near-black for strong headings */
-    --border-color: #dee2e6;           /* A subtle border/divider color */
+    --bg-color: #f4f7f6;
+    --card-bg-color: #ffffff;
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --text-color: #212529;
+    --heading-color: #212529;
+    --border-color: #e9ecef;
+    --skill-bg-color: #e7f0ff;
+    --skill-text-color: #0056b3;
     
     --font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    --font-family-serif: "Georgia", serif;
+    --font-family-serif: "Georgia", "Times New Roman", Times, serif;
     
     --spacing-unit: 20px;
 }
 
 /* --- 2. GLOBAL & TYPOGRAPHY RESETS --- */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
     font-family: var(--font-family-sans);
-    line-height: 1.7; /* Increased line-height for better readability */
+    line-height: 1.7;
     background-color: var(--bg-color);
     color: var(--text-color);
     display: flex;
@@ -30,133 +34,148 @@ body {
     padding: var(--spacing-unit);
 }
 
-/* The main content container */
 .container {
-    max-width: 850px;
+    max-width: 900px;
     width: 100%;
     background-color: var(--card-bg-color);
-    padding: calc(var(--spacing-unit) * 2);
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: calc(var(--spacing-unit) * 2.5);
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* --- 3. TYPOGRAPHY STYLES --- */
-h1, h2, h3 {
-    font-family: var(--font-family-serif);
-    color: var(--heading-color);
-    line-height: 1.3;
+/* --- 3. HEADER & PROFILE STYLES --- */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--spacing-unit) * 2);
+    margin-bottom: calc(var(--spacing-unit) * 3);
+    text-align: left;
 }
 
-h1 {
-    font-size: 2.8em;
-    text-align: center;
-    margin-bottom: 0.25em;
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--card-bg-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+.profile-text h1 {
+    font-size: 3em;
+    text-align: left;
+    margin-bottom: 0.1em;
+}
+
+.profile-text p {
+    font-size: 1.3em;
+    color: var(--secondary-color);
+    font-family: var(--font-family-sans);
+}
+
+/* --- 4. SECTION & TYPOGRAPHY STYLES --- */
 h2 {
-    font-size: 1.8em;
-    border-bottom: 2px solid var(--border-color);
+    font-size: 2em;
+    border-bottom: 3px solid var(--primary-color);
     padding-bottom: 10px;
-    margin-bottom: var(--spacing-unit);
+    margin-bottom: calc(var(--spacing-unit) * 1.5);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+h2 .fas, h2 .fab {
+    color: var(--primary-color);
 }
 
 h3 {
-    font-size: 1.3em;
-    color: var(--primary-color);
-    margin-bottom: 10px;
+    font-size: 1.4em;
+    color: var(--heading-color);
+    margin-bottom: 15px;
 }
 
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
+a { color: var(--primary-color); text-decoration: none; }
+a:hover { text-decoration: underline; }
 
-a:hover {
-    text-decoration: underline;
-    color: #003d82; /* A slightly darker blue on hover */
-}
-
-ul {
-    padding-left: var(--spacing-unit);
-}
-
-li {
-    margin-bottom: 10px; /* Adds space between list items */
-}
-
-/* --- 4. LAYOUT & SECTION STYLES --- */
-header {
-    margin-bottom: calc(var(--spacing-unit) * 2.5);
-}
-
-/* The tagline under the main name */
-header p {
-    font-size: 1.2em;
-    color: #6c757d;
-    text-align: center;
-}
-
-/* Add space between each major section */
 section + section {
-    margin-top: calc(var(--spacing-unit) * 2.5);
+    margin-top: calc(var(--spacing-unit) * 3);
 }
 
-/* --- 5. COMPONENT STYLES: PROJECT CARD --- */
+/* --- 5. SKILLS SECTION --- */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-badge {
+    background-color: var(--skill-bg-color);
+    color: var(--skill-text-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.skill-badge:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* --- 6. PROJECT CARD STYLES --- */
 .project-card {
-    background-color: #fdfdfd; /* A slightly off-white, can also be var(--card-bg-color) */
     border: 1px solid var(--border-color);
+    border-left: 5px solid var(--primary-color);
     border-radius: 8px;
     padding: calc(var(--spacing-unit) * 1.5);
     margin-bottom: var(--spacing-unit);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-/* A subtle lift effect on hover for desktop users */
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+.project-card:hover { transform: translateY(-5px); box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); }
+.project-card p, .project-card ul { margin-bottom: 15px; }
+.project-card ul { padding-left: 20px; list-style-type: circle; }
+
+/* --- 7. CONTACT SECTION --- */
+.contact-links {
+    display: flex;
+    gap: 20px;
+    margin-top: var(--spacing-unit);
 }
 
-.project-card p, .project-card ul {
-    margin-bottom: 15px; /* Consistent spacing inside the card */
+.contact-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1em;
+    transition: all 0.2s ease;
 }
 
-.project-card ul {
-    list-style-type: circle; /* Differentiates lists inside cards */
+.contact-links a:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-color: var(--primary-color);
+    text-decoration: none;
 }
 
-.project-card li {
-    font-size: 0.95em;
-    line-height: 1.6;
-}
-
-
-/* --- 6. RESPONSIVE DESIGN FOR MOBILE --- */
-/* Adjusts the layout for screens smaller than 768px (tablets and phones) */
+/* --- 8. RESPONSIVE DESIGN --- */
 @media (max-width: 768px) {
-    body {
-        padding: 0; /* Full width on mobile */
-    }
+    body { padding: 0; }
     
-    .container {
-        padding: var(--spacing-unit);
-        border-radius: 0;
-        box-shadow: none;
+    .container { padding: var(--spacing-unit); border-radius: 0; box-shadow: none; }
+
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
     }
 
-    h1 {
-        font-size: 2.2em;
-    }
-
-    h2 {
-        font-size: 1.5em;
-    }
-
-    /* Disable hover-lift effect on mobile where 'hover' is not a primary interaction */
-    .project-card:hover {
-        transform: none;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    }
+    .profile-text h1, .profile-text p { text-align: center; }
+    
+    .contact-links { flex-direction: column; }
 }
