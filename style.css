@@ -94,9 +94,6 @@ h1 {
     margin-bottom: 30px; 
 }
 
-/* The .hero-about paragraph is not in the full-screen hero, 
-   but its styles are here if you decide to add it back. */
-
 .contact-links { 
     display: flex; 
     gap: 15px; 
@@ -118,7 +115,7 @@ h1 {
 
 .button-primary { 
     background-color: #785dfe;
-    color: #ffffff;
+    color: #0d0070;
 }
 
 .button-primary:hover { 
