@@ -440,7 +440,89 @@ responsibilities-list dt i {
     font-size: 0.9rem;
 }
 
-/* --- 10. RESPONSIVE DESIGN --- */
+/* --- 10. MOBILE RESPONSIVE OPTIMIZATIONS --- */
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 40px;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .hero-subtitle {
+        white-space: normal;
+        font-size: 1.1rem;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .button-primary, .button-secondary {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+
+    .timeline-item .timeline-content h3 {
+        font-size: 1.3rem;
+        line-height: 1.4;
+    }
+
+    .timeline-content ul {
+        padding-left: 20px;
+    }
+
+    .publication-card h3 {
+        font-size: 1.25rem;
+        line-height: 1.4;
+    }
+
+    .publication-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .skills-filters {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 10px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        scrollbar-color: var(--primary-color) var(--bg-light);
+    }
+
+    .skills-filters::-webkit-scrollbar {
+        height: 4px;
+    }
+    .skills-filters::-webkit-scrollbar-thumb {
+        background-color: var(--primary-color);
+        border-radius: 4px;
+    }
+
+    .filter-btn {
+        display: inline-block;
+    }
+
+    .skills-education-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- 11. RESPONSIVE DESIGN --- */
 @media (max-width: 900px) {
     .skills-education-grid { grid-template-columns: 1fr; }
 }
