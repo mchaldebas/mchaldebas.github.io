@@ -125,6 +125,7 @@ h2::after {
     background-attachment: fixed;
     text-align: center;
     position: relative;
+    transition: background-position 0.2s linear;
 }
 
 .hero-container { 
@@ -323,6 +324,37 @@ responsibilities-list dt i {
 .skill-badge.highlight {
     background-color: var(--primary-color);
     color: #ffffff;
+}
+
+[data-tooltip] {
+    position: relative;
+    cursor: help;
+}
+
+[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%; /* Position above the element */
+    left: 50%;
+    transform: translateX(-50%);
+    
+    background-color: #0d1117; /* Dark background */
+    color: var(--text-dark);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    font-weight: 400;
+    white-space: nowrap;
+    
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+[data-tooltip]:hover::after {
+    opacity: 1;
 }
 
 /* --- 7. SCROLL-DOWN INDICATOR --- */
