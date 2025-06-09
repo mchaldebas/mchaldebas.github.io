@@ -23,8 +23,9 @@ elementsToFadeIn.forEach((el) => FADE_IN_OBSERVER.observe(el));
 const hero = document.getElementById('hero');
 
 hero.addEventListener('mousemove', (e) => {
+    const x = (e.clientX - window.innerWidth / 2) / window.innerWidth;
     const y = (e.clientY - window.innerHeight / 2) / window.innerHeight;
-    hero.style.backgroundPosition = `calc(50% + ${y * -25}px)`;
+    hero.style.backgroundPosition = `calc(50% + ${x * -1}px) calc(50% + ${y * -30}px)`;
 });
 
 document.addEventListener('DOMContentLoaded', () => {
