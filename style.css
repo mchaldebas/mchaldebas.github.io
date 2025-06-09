@@ -152,7 +152,7 @@ border: 3px solid var(--primary-color);
 border-radius: 50%;
 }
 .timeline-item:last-child { margin-bottom: 0; }
-.timeline-content h3 { font-family: var(--font-family-sans); font-size: 1.2rem; font-weight: 700; margin-bottom: 5px; }
+.timeline-content h3 { font-family: var(--font-family-sans); font-size: 1.4rem; font-weight: 700; margin-bottom: 5px; }
 .timeline-meta { color: var(--text-light); margin-bottom: 15px; font-size: 0.9rem; }
 .timeline-content ul { padding-left: 20px; }
 
