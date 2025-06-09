@@ -124,7 +124,13 @@ h2::after {
     align-items: center;
     justify-content: center;
 
-    background-image: linear-gradient(rgba(10, 25, 47, 0.25), rgba(10, 25, 47, 0.75)), url('hero-background.jpg');
+    background-image: 
+        radial-gradient(
+            ellipse farthest-corner at center, 
+            rgba(13, 17, 23, 0.8) 0%, 
+            transparent 70%
+        ), 
+        url('hero-background.jpg');
     background-size: cover;
     background-position: center top;
     background-attachment: fixed;
