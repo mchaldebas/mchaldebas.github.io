@@ -454,3 +454,15 @@ responsibilities-list dt i {
     .nav-links { display: none; } 
     .nav-logo { margin: 0 auto; }
 }
+
+@media (orientation: portrait) {
+    #hero {
+        background-image: 
+            radial-gradient(
+                ellipse farthest-corner at center, 
+                rgba(13, 17, 23, 0.8) 0%, 
+                transparent 70%
+            ), 
+            url('hero-background-portrait.jpg');
+    }
+}
