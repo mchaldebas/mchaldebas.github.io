@@ -197,7 +197,7 @@ border-radius: 4px;
 .skills-column h2, .education-column h2 { text-align: left; font-size: 1.8rem; }
 .skills-column h2::after, .education-column h2::after { margin: 15px 0 0; }
 .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; }
-.skill-badge { background-color: #e3f2fd; color: #0d47a1; padding: 6px 14px; border-radius: 16px; font-size: 0.9rem; font-weight: 500; }
+.skill-badge { background-color: grey; color: #ffffff; padding: 6px 14px; border-radius: 16px; font-size: 0.9rem; font-weight: 500; }
 .education-item { margin-bottom: 20px; }
 .education-item h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0; }
 .education-item p { color: var(--text-light); }
