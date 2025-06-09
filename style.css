@@ -5,7 +5,8 @@
 
 /* --- 1. THEME & VARIABLES (DARK MODE) --- */
 :root {
-    --primary-color: #58a6ff;
+    --primary-color: #624dc9;
+    --secondary-color: #1535eb;
     --bg-light: #161b22;
     --bg-dark: #0d1117;
     --text-dark: #c9d1d9;
@@ -39,19 +40,28 @@ h2 {
     color: #ffffff;
 }
 
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin: 15px auto 0;
+}
+
 /* --- 3. HERO SECTION --- */
 #hero {
-    /* Set the height to 100% of the viewport height */
     height: 100vh; 
         display: flex;
     align-items: center;
     justify-content: center;
 
-    background-image: linear-gradient(rgba(10, 25, 47, 0.75), rgba(10, 25, 47, 0.75)), url('hero-background.jpg');
+    background-image: linear-gradient(rgba(10, 25, 47, 0.5), rgba(10, 25, 47, 0.75)), url('hero-background.jpg');
     background-size: cover;
     background-position: center top;
     background-attachment: fixed;
     text-align: center;
+    position: relative;
 }
 
 .hero-container { 
