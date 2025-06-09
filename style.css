@@ -112,6 +112,11 @@ h2::after {
     background-color: var(--secondary-color);
 }
 
+.nav-links a.active {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
 /* --- 3. HERO SECTION --- */
 #hero {
     min-height: 100vh; 
