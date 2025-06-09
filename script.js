@@ -19,3 +19,11 @@ const FADE_IN_OBSERVER = new IntersectionObserver((entries) => {
 
 const elementsToFadeIn = document.querySelectorAll('.fade-in');
 elementsToFadeIn.forEach((el) => FADE_IN_OBSERVER.observe(el));
+
+const hero = document.getElementById('hero');
+
+hero.addEventListener('mousemove', (e) => {
+    const x = (e.clientX - window.innerWidth / 2) / window.innerWidth;
+    const y = (e.clientY - window.innerHeight / 2) / window.innerHeight;
+    hero.style.backgroundPosition = `calc(50% + ${x * -15}px) calc(50% + ${y * -15}px)`;
+});
