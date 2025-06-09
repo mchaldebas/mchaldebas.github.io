@@ -190,7 +190,6 @@ border-radius: 4px;
 .timeline-item, .publication-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .timeline-item:hover, .publication-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
@@ -201,6 +200,32 @@ border-radius: 4px;
 }
 .publication-card h3 a:hover {
     color: var(--primary-color);
+    text-decoration: underline;
+}
+.additional-pubs-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+.additional-pubs-list li {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+.additional-pubs-list li:last-child {
+    border-bottom: none;
+}
+.additional-pubs-list em {
+    color: var(--text-light);
+    display: block;
+    margin-top: 4px;
+}
+.additional-pubs-list a {
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    margin-left: 10px;
+}
+.additional-pubs-list a:hover {
     text-decoration: underline;
 }
 
