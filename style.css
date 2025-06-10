@@ -131,9 +131,10 @@ h2::after {
             transparent 70%
         ), 
         url('hero-background.jpg');
-    background-size: 105%;
+    background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    background-repeat: no-repeat;
     text-align: center;
     position: relative;
     transition: background-position 0.2s linear;
@@ -172,7 +173,7 @@ h1 {
     color: #cdd6f4;
     margin-bottom: 30px;
     text-align: center;
-    font-size: clamp(0.8rem, 2.5vw, 1.5rem);
+    font-size: clamp(1.5rem, 2.8vw, 2.2rem);
     white-space: nowrap; 
 }
 
@@ -535,6 +536,10 @@ responsibilities-list dt i {
 @media (max-width: 768px) {
     .nav-links { display: none; } 
     .nav-logo { margin: 0 auto; }
+    #hero {
+        background-size: cover;
+        background-position: center;
+    }
 }
 
 @media (orientation: portrait) {
