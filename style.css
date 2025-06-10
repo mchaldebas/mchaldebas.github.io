@@ -131,8 +131,8 @@ h2::after {
             transparent 70%
         ), 
         url('hero-background.jpg');
-    background-size: cover;
-    background-position: center top;
+    background-size: 105%;
+    background-position: center;
     background-attachment: fixed;
     text-align: center;
     position: relative;
