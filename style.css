@@ -356,10 +356,6 @@ responsibilities-list dt i {
 .education-item { margin-bottom: 20px; }
 .education-item h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0; }
 .education-item p { color: var(--text-light); }
-.skill-badge.highlight {
-    background-color: var(--primary-color);
-    color: #ffffff;
-}
 
 [data-tooltip] {
     position: relative;
@@ -390,6 +386,34 @@ responsibilities-list dt i {
 
 [data-tooltip]:hover::after {
     opacity: 1;
+}
+
+.skill-category {
+    margin-bottom: 30px;
+}
+
+.skill-category:last-child {
+    margin-bottom: 0;
+}
+
+.skill-category h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+}
+
+.skill-badge.primary {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.skill-badge.secondary {
+    background-color: var(--border-color);
+    color: var(--text-dark);
 }
 
 /* --- 7. SCROLL-DOWN INDICATOR --- */
