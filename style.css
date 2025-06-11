@@ -121,24 +121,41 @@ h2::after {
 /* --- 3. HERO SECTION --- */
 #hero {
     min-height: 100vh; 
-        display: flex;
+    display: flex;
     align-items: center;
     justify-content: center;
 
-    background-image: 
-        radial-gradient(
-            ellipse farthest-corner at center, 
-            rgba(13, 17, 23, 0.8) 0%, 
-            transparent 70%
-        ), 
-        url('hero-background.jpg');
+    background-image: url('hero-background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
     text-align: center;
     position: relative;
-    transition: background-position 0.2s linear;
+    overflow: hidden; 
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    right: -50px;
+    bottom: -50px;
+    z-index: 1;
+
+    background-image: radial-gradient(
+        ellipse farthest-corner at center, 
+        rgba(13, 17, 23, 0.8) 0%, 
+        transparent 70%
+    );
+    transition: transform 0.2s linear;
+    transform: translate(var(--mouse-x, 0px), var(--mouse-y, 0px));
+}
+
+.hero-content-container {
+    position: relative;
+    z-index: 2;
 }
 
 .hero-container { 
@@ -570,12 +587,13 @@ responsibilities-list dt i {
 
 @media (orientation: portrait) {
     #hero {
-        background-image: 
-            radial-gradient(
-                ellipse farthest-corner at center, 
-                rgba(13, 17, 23, 0.8) 0%, 
-                transparent 70%
-            ), 
-            url('hero-background-portrait.jpg');
+        background-image: url('hero-background-portrait.jpg');
+    }
+    #hero::before {
+        background-image: radial-gradient(
+            ellipse farthest-corner at center, 
+            rgba(13, 17, 23, 0.8) 0%, 
+            transparent 70%
+        );
     }
 }
