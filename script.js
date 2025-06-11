@@ -8,10 +8,12 @@ window.addEventListener('scroll', function() {
 });
 
 const hero = document.getElementById('hero');
+
 hero.addEventListener('mousemove', (e) => {
     const x = (e.clientX - window.innerWidth / 2) / window.innerWidth;
     const y = (e.clientY - window.innerHeight / 2) / window.innerHeight;
-    hero.style.backgroundPosition = `calc(50% + ${x * -35}px) calc(50% + ${y * -35}px)`;
+    hero.style.setProperty('--mouse-x', `${x * -35}px`);
+    hero.style.setProperty('--mouse-y', `${y * -35}px`);
 });
 
 document.addEventListener('DOMContentLoaded', function() {
