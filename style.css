@@ -120,19 +120,27 @@ h2::after {
 
 /* --- 3. HERO SECTION --- */
 #hero {
-    min-height: 100vh; 
+    min-height: 100vh;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 
     background-image: url('hero-background.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     background-repeat: no-repeat;
-    text-align: center;
-    position: relative;
-    overflow: hidden; 
 }
 
 #hero::before {
@@ -586,7 +594,7 @@ responsibilities-list dt i {
 }
 
 @media (orientation: portrait) {
-    #hero {
+    .hero-background {
         background-image: url('hero-background-portrait.jpg');
     }
     #hero::before {
