@@ -7,6 +7,7 @@
 :root {
     --primary-color: #785dfe;
     --secondary-color: #435be4;
+    --light-color: #9d8afb;
     --bg-light: #161b22;
     --bg-dark: #0d1117;
     --text-dark: #c9d1d9;
@@ -284,8 +285,9 @@ margin: 20px 0;
 border-radius: 4px;
 }
 .contribution-highlight ul { padding-left: 20px; }
+
 .publication-links { display: flex; gap: 20px; margin-top: 20px; }
-.publication-links a { font-weight: 600; text-decoration: none; color: var(--primary-color); }
+.publication-links a { font-weight: 600; text-decoration: none; color: var(--light-color); }
 .publication-links a:hover { text-decoration: underline; }
 .timeline-item, .publication-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -343,24 +345,6 @@ responsibilities-list dt i {
     margin-left: 25px;
     margin-bottom: 10px;
     color: var(--text-light);
-}
-
-.citation-badge {
-            display: inline-block;
-            margin-left: 10px;
-            padding: 4px 10px;
-            background-color: #e8f0fe;
-            color: #1a73e8;
-            font-size: 0.85em;
-            font-weight: 700;
-            font-family: 'Inter', sans-serif;
-            border-radius: 12px;
-            vertical-align: middle;
-            transition: all 0.2s ease-in-out;
-}
-.publication-links a:hover .citation-badge {
-            background-color: #d2e3fc;
-            color: #1765cc;
 }
 
 /* --- 6. SKILLS & EDUCATION --- */
