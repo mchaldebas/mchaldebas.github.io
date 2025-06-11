@@ -1,26 +1,26 @@
-window.addEventListener('scroll', function() {
-    const nav = document.getElementById('main-nav');
-    if (window.scrollY > window.innerHeight * 0.85) {
-        nav.classList.add('visible');
-    } else {
-        nav.classList.remove('visible');
-    }
-});
-
-const hero = document.getElementById('hero');
-
-hero.addEventListener('mousemove', (e) => {
-    const x = (e.clientX - window.innerWidth / 2) / window.innerWidth;
-    const y = (e.clientY - window.innerHeight / 2) / window.innerHeight;
-    hero.style.setProperty('--mouse-x', `${x * -35}px`);
-    hero.style.setProperty('--mouse-y', `${y * -35}px`);
-});
-
 document.addEventListener('DOMContentLoaded', function() {
+    const hero = document.getElementById('hero');
+    if (hero) {
+        hero.addEventListener('mousemove', (e) => {
+            const x = (e.clientX - window.innerWidth / 2) / window.innerWidth;
+            const y = (e.clientY - window.innerHeight / 2) / window.innerHeight;
+            hero.style.setProperty('--mouse-x', `${x * -35}px`);
+            hero.style.setProperty('--mouse-y', `${y * -35}px`);
+        });
+    }
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > window.innerHeight * 0.85) {
+            nav.classList.add('visible');
+        } else {
+            nav.classList.remove('visible');
+        }
+    });
     const FADE_IN_OBSERVER = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
+                FADE_IN_OBSERVER.unobserve(entry.target);
             }
         });
     }, {
@@ -41,7 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (entry.isIntersecting) {
                 const id = entry.target.getAttribute('id');
                 navLinks.forEach(link => link.classList.remove('active'));
-
                 const activeLink = document.querySelector(`#main-nav .nav-links a[href="#${id}"]`);
                 if (activeLink) {
                     activeLink.classList.add('active');
@@ -52,5 +51,4 @@ document.addEventListener('DOMContentLoaded', function() {
     sections.forEach(section => {
         sectionObserver.observe(section);
     });
-
 });
