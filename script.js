@@ -14,40 +14,52 @@ hero.addEventListener('mousemove', (e) => {
     hero.style.backgroundPosition = `calc(50% + ${x * -35}px) calc(50% + ${y * -35}px)`;
 });
 
+
 async function getCitationCount() {
     const scholarId = 'c2xVFBwAAAAJ';
     const citationElement = document.getElementById('citation-count');
-    
+
+    if (!citationElement) {
+        console.log('Citation element not found on the page.');
+        return; 
+    }
+
     const scholarProfileUrl = `https://scholar.google.com/citations?user=${scholarId}&hl=en`;
     const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(scholarProfileUrl)}`;
-
-    if (!citationElement) return;
-
+    
+    console.log('Step 1: Starting to fetch citation count...');
     citationElement.textContent = '...';
 
     try {
         const response = await fetch(proxyUrl);
-        const data = await response.json();
-        const htmlContent = data.contents;
-
-        if (!htmlContent) {
-            throw new Error('Failed to retrieve HTML content.');
+        if (!response.ok) {
+            throw new Error(`Network response was not ok. Status: ${response.status}`);
         }
 
+        const data = await response.json();
+        console.log('Step 2: Successfully fetched data from proxy.');
+
+        const htmlContent = data.contents;
+        if (!htmlContent || htmlContent.length < 100) {
+            throw new Error('Proxy returned empty or invalid HTML content.');
+        }
+
+        console.log('Step 3: HTML content received. Parsing...');
         const parser = new DOMParser();
         const doc = parser.parseFromString(htmlContent, 'text/html');
 
-        const countElement = doc.querySelector('.gsc_rsb_std');
+        const countElement = doc.querySelector('#gsc_rsb_st .gsc_rsb_std');
         
         if (countElement) {
+            console.log('Step 4: Found citation element. Updating value.');
             const citationCount = parseInt(countElement.textContent, 10);
             animateValue(citationElement, 0, citationCount, 1500);
         } else {
-            throw new Error('Could not find citation count element on the page.');
+            throw new Error('Could not find citation count element on the page. (Likely a CAPTCHA was served).');
         }
 
     } catch (error) {
-        console.error('Failed to fetch or parse citation count:', error);
+        console.error('Final Error:', error);
         citationElement.textContent = '125+';
     }
 }
