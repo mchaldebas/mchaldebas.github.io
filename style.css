@@ -345,6 +345,24 @@ responsibilities-list dt i {
     color: var(--text-light);
 }
 
+.citation-badge {
+            display: inline-block;
+            margin-left: 10px;
+            padding: 4px 10px;
+            background-color: #e8f0fe;
+            color: #1a73e8;
+            font-size: 0.85em;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            border-radius: 12px;
+            vertical-align: middle;
+            transition: all 0.2s ease-in-out;
+}
+.publication-links a:hover .citation-badge {
+            background-color: #d2e3fc;
+            color: #1765cc;
+}
+
 /* --- 6. SKILLS & EDUCATION --- */
 #skills-education { padding: 80px 0; }
 .skills-education-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px; }
@@ -365,11 +383,11 @@ responsibilities-list dt i {
 [data-tooltip]::after {
     content: attr(data-tooltip);
     position: absolute;
-    bottom: 125%; /* Position above the element */
+    bottom: 125%;
     left: 50%;
     transform: translateX(-50%);
     
-    background-color: #0d1117; /* Dark background */
+    background-color: #0d1117;
     color: var(--text-dark);
     border: 1px solid var(--border-color);
     border-radius: 6px;
