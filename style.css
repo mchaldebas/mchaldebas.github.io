@@ -127,6 +127,7 @@ h2::after {
     justify-content: center;
     text-align: center;
     overflow: hidden;
+    z-index: 0;
 }
 
 .hero-background {
@@ -151,11 +152,10 @@ h2::after {
     right: -50px;
     bottom: -50px;
     z-index: 1;
-
     background-image: radial-gradient(
-        ellipse farthest-corner at center, 
-        rgba(13, 17, 23, 0.8) 0%, 
-        transparent 70%
+        circle 400px at center, 
+        rgba(255, 255, 255, 0.08) 0%,
+        rgba(255, 255, 255, 0) 70%
     );
     transition: transform 0.2s linear;
     transform: translate(var(--mouse-x, 0px), var(--mouse-y, 0px));
@@ -241,6 +241,30 @@ h1 {
 .button-secondary:hover { 
     background-color: rgba(255, 255, 255, 0.1); 
     border-color: #ffffff;
+}
+
+#experience,
+#skills-education {
+    padding: 80px 0;
+    position: relative;
+    background-color: var(--bg-dark);
+}
+
+#publications {
+    padding: 80px 0;
+    position: relative;
+    background-color: var(--bg-dark);
+    border-top: 1px solid var(--border-color);
+}
+
+#footer {
+    padding: 30px 0;
+    position: relative;
+    background-color: var(--bg-light);
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.9rem;
 }
 
 /* --- 4. EXPERIENCE TIMELINE --- */
@@ -482,17 +506,7 @@ responsibilities-list dt i {
     transition-delay: calc(0.1s * var(--i));
 }
 
-/* --- 9. FOOTER --- */
-#footer {
-    background-color: var(--bg-light);
-    padding: 30px 0;
-    text-align: center;
-    border-top: 1px solid var(--border-color);
-    color: var(--text-light);
-    font-size: 0.9rem;
-}
-
-/* --- 10. MOBILE RESPONSIVE OPTIMIZATIONS --- */
+/* --- 9. MOBILE RESPONSIVE OPTIMIZATIONS --- */
 @media (max-width: 768px) {
 
     h1 {
@@ -574,7 +588,7 @@ responsibilities-list dt i {
     }
 }
 
-/* --- 11. RESPONSIVE DESIGN --- */
+/* --- 10. RESPONSIVE DESIGN --- */
 @media (max-width: 900px) {
     .skills-education-grid { grid-template-columns: 1fr; }
 }
