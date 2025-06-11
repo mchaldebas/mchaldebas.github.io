@@ -15,9 +15,6 @@ hero.addEventListener('mousemove', (e) => {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    
-    getCitationCount();
-    
     const FADE_IN_OBSERVER = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
