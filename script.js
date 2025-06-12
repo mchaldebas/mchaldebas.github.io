@@ -51,8 +51,8 @@ document.addEventListener('DOMContentLoaded', function() {
         threshold: 0.1
     });
 
-    const elementsToFadeIn = document.querySelectorAll('.fade-in');
-    elementsToFadeIn.forEach((el) => FADE_IN_OBSERVER.observe(el));
+    const elementsToAnimate = document.querySelectorAll('.fade-in, h2');
+    elementsToAnimate.forEach((el) => FADE_IN_OBSERVER.observe(el));
 
     // --- Intersection Observer for Active Nav Link Highlighting ---
     const sections = document.querySelectorAll('section[id]');
