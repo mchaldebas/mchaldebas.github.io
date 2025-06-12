@@ -208,9 +208,9 @@ h1 {
 
 .button-primary {
     background-image: linear-gradient(
-            135deg, 
+            145deg, 
             #4b43e4 0%, 
-            #3a1c71 100%
+            #080311 100%
         );
     color: #ffffff;
     border: none;
