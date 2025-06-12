@@ -536,6 +536,10 @@ h1 {
 }
 
 @media (max-width: 768px) {
+    h1, .hero-subtitle {
+    white-space: normal;
+    word-break: break-word;
+    }
     h2 { font-size: 1.8rem; margin-bottom: 40px; }
     #main-nav { display: none; }
     .contact-links {
