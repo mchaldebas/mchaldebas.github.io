@@ -80,4 +80,14 @@ document.addEventListener('DOMContentLoaded', function() {
     sections.forEach(section => {
         sectionObserver.observe(section);
     });
+    const navButton = document.querySelector('.nav-button');
+    if (navButton) {
+        navButton.addEventListener('mousemove', e => {
+            const rect = navButton.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            navButton.style.setProperty('--mouse-x', `${x}px`);
+            navButton.style.setProperty('--mouse-y', `${y}px`);
+        });
+    }
 });
