@@ -117,7 +117,7 @@ h2.visible::after {
 }
 
 .nav-links a:hover {
-    color: var(--primary-color);
+    color: var(--text-dark);
 }
 
 .nav-button {
@@ -160,7 +160,6 @@ h2.visible::after {
 .nav-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 20px rgba(var(--rgb-primary), 0.2);
-    color: #ffffff;
 }
 
 .nav-button:hover::before {
