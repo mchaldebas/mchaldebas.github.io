@@ -184,6 +184,7 @@ h2.visible::after {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    background-size: 150%;
     text-align: center;
     background-attachment: fixed;
 }
@@ -262,7 +263,7 @@ h1 {
 
 .button-secondary {
     background: rgba(13, 17, 23, 0.3);
-    color: var(--text-dark);
+    color: #ffffff;
     border-color: rgba(var(--rgb-primary), 0.25);
 }
 
