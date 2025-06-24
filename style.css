@@ -479,6 +479,7 @@ h1 {
 .education-item p { 
     color: var(--text-light); 
 }
+.education-detail { font-size: 0.9em; color: #666; margin-top: 5px; }
 [data-tooltip] {
     position: relative;
     cursor: help;
