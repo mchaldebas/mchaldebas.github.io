@@ -316,11 +316,12 @@ h1 {
 .timeline { 
     border-left: 3px solid var(--border-color); 
     padding-left: 40px; 
-    position: relative; 
+    position: relative;
 }
+
 .timeline-item { 
     position: relative; 
-    margin-bottom: 50px; 
+    margin-bottom: 50px;
 }
 .timeline-item:last-child { 
     margin-bottom: 0; 
@@ -336,6 +337,8 @@ h1 {
     border: 3px solid var(--primary-color);
     border-radius: 50%;
 }
+
+
 .timeline-content h3 { 
     font-family: var(--font-family-sans); 
     font-size: 1.4rem; 
