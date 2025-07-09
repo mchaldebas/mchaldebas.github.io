@@ -5,6 +5,7 @@
 
 /* --- 1. THEME & VARIABLES --- */
 :root {
+    /* Dark Theme (Default) */
     --primary-color: #785dfe;
     --secondary-color: #435be4;
     --light-color: #9d8afb;
@@ -15,9 +16,37 @@
     --border-color: #30363d;
     --highlight-bg: rgba(88, 166, 255, 0.1);
     --rgb-primary: 120, 93, 254;
+    
+    /* Light Theme Variables */
+    --bg-light-light: #ffffff;
+    --bg-dark-light: #f8f9fa;
+    --text-dark-light: #2d3748;
+    --text-light-light: #4a5568;
+    --border-color-light: #e2e8f0;
+    --highlight-bg-light: rgba(120, 93, 254, 0.1);
 
     --font-family-sans: "Inter", sans-serif;
     --font-family-serif: "Lora", serif;
+    
+    /* Theme State */
+    --current-bg-light: var(--bg-light);
+    --current-bg-dark: var(--bg-dark);
+    --current-text-dark: var(--text-dark);
+    --current-text-light: var(--text-light);
+    --current-border-color: var(--border-color);
+    --current-highlight-bg: var(--highlight-bg);
+    --hover-bg: rgba(120, 93, 254, 0.06);
+}
+
+/* Light Theme */
+[data-theme="light"] {
+    --current-bg-light: var(--bg-light-light);
+    --current-bg-dark: var(--bg-dark-light);
+    --current-text-dark: var(--text-dark-light);
+    --current-text-light: var(--text-light-light);
+    --current-border-color: var(--border-color-light);
+    --current-highlight-bg: var(--highlight-bg-light);
+    --hover-bg: rgba(120, 93, 254, 0.06);
 }
 
 /* --- 2. GLOBAL STYLES --- */
@@ -34,9 +63,10 @@ html {
 body {
     font-family: var(--font-family-sans);
     line-height: 1.7;
-    background-color: var(--bg-dark);
-    color: var(--text-dark);
+    background-color: var(--current-bg-dark);
+    color: var(--current-text-dark);
     -webkit-font-smoothing: antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container { 
@@ -50,7 +80,8 @@ h2 {
     font-size: 2.2rem;
     text-align: center;
     margin-bottom: 60px;
-    color: #ffffff;
+    color: var(--current-text-dark);
+    transition: color 0.3s ease;
 }
 
 h2::after {
@@ -74,13 +105,17 @@ h2.visible::after {
     background-color: rgba(13, 17, 23, 0.85);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--current-border-color);
     position: fixed;
     top: -100px;
     left: 0;
     width: 100%;
     z-index: 1000;
     transition: top 0.4s ease-in-out;
+}
+
+[data-theme="light"] #main-nav {
+    background-color: rgba(255, 255, 255, 0.85);
 }
 
 #main-nav.visible {
@@ -94,12 +129,19 @@ h2.visible::after {
     height: 60px;
 }
 
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 24px; /* or whatever spacing you prefer */
+}
+
 .nav-logo a {
-    color: #ffffff;
+    color: var(--current-text-dark);
     text-decoration: none;
     font-family: var(--font-family-serif);
     font-weight: 600;
     font-size: 1.1rem;
+    transition: color 0.3s ease;
 }
 
 .nav-links {
@@ -110,14 +152,14 @@ h2.visible::after {
 }
 
 .nav-links a {
-    color: var(--text-dark);
+    color: var(--current-text-dark);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: var(--text-dark);
+    color: var(--current-text-dark);
 }
 
 .nav-button {
@@ -171,6 +213,136 @@ h2.visible::after {
     font-weight: 700;
 }
 
+/* --- Theme Toggle Button --- */
+.theme-toggle {
+    background: none;
+    border: none;
+    color: var(--current-text-dark);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-toggle:hover {
+    background-color: var(--current-highlight-bg);
+    transform: scale(1.1);
+}
+
+.theme-toggle .fa-sun {
+    display: none;
+}
+
+[data-theme="light"] .theme-toggle .fa-moon {
+    display: none;
+}
+
+[data-theme="light"] .theme-toggle .fa-sun {
+    display: block;
+}
+
+/* --- Theme Toggle Button: Divider and Margin --- */
+.theme-toggle {
+    margin-left: 18px;
+    border-left: 1px solid var(--current-border-color);
+    padding-left: 12px;
+    padding-right: 12px;
+}
+.theme-toggle::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 20%;
+    bottom: 20%;
+    width: 1px;
+    background: var(--current-border-color);
+}
+
+/* --- Mobile Navigation --- */
+.mobile-nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 1001;
+}
+
+.mobile-nav-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--current-text-dark);
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.mobile-nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.mobile-nav-menu {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: var(--current-bg-dark);
+    border-bottom: 1px solid var(--current-border-color);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 999;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+
+.mobile-nav-menu.active {
+    transform: translateY(0);
+}
+
+.mobile-nav-links {
+    list-style: none;
+    padding: 20px 0;
+    margin: 0;
+}
+
+.mobile-nav-links li {
+    margin: 0;
+}
+
+.mobile-nav-links a {
+    display: block;
+    padding: 15px 20px;
+    color: var(--current-text-dark);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid var(--current-border-color);
+}
+
+.mobile-nav-links a:hover {
+    background-color: var(--current-highlight-bg);
+    color: var(--primary-color);
+    padding-left: 25px;
+}
+
+.mobile-nav-links a:last-child {
+    border-bottom: none;
+}
+
 /* --- 4. HERO SECTION --- */
 #hero {
     min-height: 100vh;
@@ -187,6 +359,22 @@ h2.visible::after {
     background-size: 150%;
     text-align: center;
     background-attachment: fixed;
+    overflow: hidden;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(135deg, rgba(120,93,254,0) 0%, rgba(120,93,254,0.04) 10%, rgba(13,17,23,0.55) 130%);
+}
+.hero-content-container,
+.hero-text,
+.contact-links {
+    position: relative;
+    z-index: 2;
 }
 
 .hero-content-container {
@@ -306,15 +494,16 @@ h1 {
 #skills-education {
     padding: 80px 0;
     position: relative;
-    background-color: var(--bg-dark);
+    background-color: var(--current-bg-dark);
+    transition: background-color 0.3s ease;
 }
 
 #publications {
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid var(--current-border-color);
 }
 
 .timeline { 
-    border-left: 3px solid var(--border-color); 
+    border-left: 3px solid var(--current-border-color); 
     padding-left: 40px; 
     position: relative;
 }
@@ -333,7 +522,7 @@ h1 {
     top: 5px;
     width: 15px;
     height: 15px;
-    background-color: var(--bg-light);
+    background-color: var(--current-bg-light);
     border: 3px solid var(--primary-color);
     border-radius: 50%;
 }
@@ -346,7 +535,7 @@ h1 {
     margin-bottom: 5px; 
 }
 .timeline-meta { 
-    color: var(--text-light); 
+    color: var(--current-text-light); 
     margin-bottom: 15px; 
     font-size: 0.9rem; 
 }
@@ -356,7 +545,7 @@ h1 {
 .timeline-role {
     margin-top: 25px;
     padding-left: 15px;
-    border-left: 2px solid var(--border-color);
+    border-left: 2px solid var(--current-border-color);
 }
 .timeline-role h4 {
     font-size: 1.2rem;
@@ -365,16 +554,17 @@ h1 {
 }
 .timeline-role-meta {
     font-size: 0.9rem;
-    color: var(--text-light);
+    color: var(--current-text-light);
     margin-bottom: 10px;
 }
 
 .publication-card {
-    background: var(--bg-light);
-    border: 1px solid var(--border-color);
+    background: var(--current-bg-light);
+    border: 1px solid var(--current-border-color);
     border-radius: 8px;
     margin-bottom: 30px;
     padding: 30px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 .publication-card.featured { 
     border-left: 5px solid var(--primary-color); 
@@ -395,15 +585,16 @@ h1 {
 }
 .publication-meta { 
     font-size: 1rem; 
-    color: var(--text-light); 
+    color: var(--current-text-light); 
     margin-bottom: 20px; 
 }
 .contribution-highlight {
-    background-color: var(--highlight-bg);
+    background-color: var(--current-highlight-bg);
     border-left: 3px solid var(--secondary-color);
     padding: 15px 20px;
     margin: 20px 0;
     border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 .contribution-highlight ul { 
     padding-left: 20px; 
@@ -416,7 +607,7 @@ h1 {
 .publication-links a { 
     font-weight: 600; 
     text-decoration: none; 
-    color: var(--light-color); 
+    color: var(--primary-color); 
 }
 .publication-links a:hover { 
     text-decoration: underline; 
@@ -427,7 +618,9 @@ h1 {
 }
 .timeline-item:hover, .publication-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 16px rgba(120, 93, 254, 0.08), 0 1.5px 6px rgba(0,0,0,0.06);
+    background-color: var(--hover-bg, rgba(120, 93, 254, 0.06));
+    transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
 }
 
 .skills-education-grid { 
@@ -448,9 +641,9 @@ h1 {
 .skill-category h3 {
     font-size: 1.1rem;
     font-weight: 700;
-    color: var(--text-dark);
+    color: var(--current-text-dark);
     margin-bottom: 15px;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--current-border-color);
     padding-bottom: 8px;
 }
 .skills-grid { 
@@ -459,12 +652,13 @@ h1 {
     gap: 10px; 
 }
 .skill-badge { 
-    background-color: var(--border-color); 
-    color: var(--text-dark);
+    background-color: var(--current-border-color); 
+    color: var(--current-text-dark);
     padding: 6px 14px; 
     border-radius: 16px; 
     font-size: 0.9rem; 
     font-weight: 500; 
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 .skill-badge.primary {
     background-color: var(--primary-color);
@@ -480,7 +674,7 @@ h1 {
     margin-bottom: 0; 
 }
 .education-item p { 
-    color: var(--text-light); 
+    color: var(--current-text-light); 
 }
 .education-detail { font-size: 0.9em; color: #666; margin-top: 5px; }
 [data-tooltip] {
@@ -493,9 +687,9 @@ h1 {
     bottom: 125%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #0d1117;
-    color: var(--text-dark);
-    border: 1px solid var(--border-color);
+    background-color: var(--current-bg-dark);
+    color: var(--current-text-dark);
+    border: 1px solid var(--current-border-color);
     border-radius: 6px;
     padding: 8px 12px;
     font-size: 0.85rem;
@@ -514,11 +708,12 @@ h1 {
 #footer {
     padding: 30px 0;
     position: relative;
-    background-color: var(--bg-light);
-    border-top: 1px solid var(--border-color);
+    background-color: var(--current-bg-light);
+    border-top: 1px solid var(--current-border-color);
     text-align: center;
-    color: var(--text-light);
+    color: var(--current-text-light);
     font-size: 0.9rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
 /* --- 7. ANIMATIONS --- */
@@ -530,6 +725,44 @@ h1 {
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* --- Section Spacing --- */
+#experience, #publications, #skills-education {
+    margin-bottom: 80px;
+}
+
+/* --- Fade-in/Slide-in Animations for Sections --- */
+.section-fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.19, 1, 0.22, 1), transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.section-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Subtle Hero Gradient --- */
+#hero {
+    background-image: linear-gradient(135deg, rgba(120,93,254,0.08) 0%, rgba(13,17,23,0.85) 100%), url('hero-background.jpg');
+}
+
+/* --- Interactive Element Hover/Focus States --- */
+.button-primary:hover, .button-secondary:hover, .nav-button:hover, .theme-toggle:hover, .mobile-nav-toggle:hover {
+    filter: brightness(1.08);
+    box-shadow: 0 2px 8px rgba(120,93,254,0.10);
+}
+
+.button-primary:focus, .button-secondary:focus, .nav-button:focus, .theme-toggle:focus, .mobile-nav-toggle:focus {
+    filter: brightness(1.12);
+    box-shadow: 0 0 0 3px rgba(120,93,254,0.18);
+}
+
+/* --- Card and Timeline Item Border Radius --- */
+.timeline-item, .publication-card {
+    border-radius: 14px;
+    overflow: hidden;
 }
 
 /* --- 9. RESPONSIVE DESIGN --- */
@@ -545,7 +778,12 @@ h1 {
     word-break: break-word;
     }
     h2 { font-size: 1.8rem; margin-bottom: 40px; }
-    #main-nav { display: none; }
+    
+    /* Mobile Navigation */
+    .desktop-nav { display: none; }
+    .mobile-nav-toggle { display: flex; }
+    .mobile-nav-menu { display: block; }
+    
     .contact-links {
         flex-direction: column;
         align-items: center;
@@ -579,4 +817,9 @@ h1 {
     #hero {
         background-image: url('hero-background-portrait.jpg');
     }
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
 }

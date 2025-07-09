@@ -4,16 +4,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matthieu Chaldebas | PhD Candidate in Bioinformatics</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>Matthieu Chaldebas | PhD Candidate in Bioinformatics & Machine Learning</title>
+    <meta name="title" content="Matthieu Chaldebas | PhD Candidate in Bioinformatics & Machine Learning">
+    <meta name="description" content="PhD Candidate applying machine learning to decode the genetic basis of human disease. Expert in WES/WGS analysis, RNA-seq, and developing tools like 5ULTRA for predicting genetic variant impacts.">
+    <meta name="keywords" content="bioinformatics, machine learning, genomics, WES, WGS, RNA-seq, genetic variants, 5ULTRA, PhD candidate, The Rockefeller University">
+    <meta name="author" content="Matthieu Chaldebas">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mchaldebas.github.io/">
+    <meta property="og:title" content="Matthieu Chaldebas | PhD Candidate in Bioinformatics & Machine Learning">
+    <meta property="og:description" content="PhD Candidate applying machine learning to decode the genetic basis of human disease. Expert in WES/WGS analysis, RNA-seq, and developing tools like 5ULTRA.">
+    <meta property="og:image" content="https://mchaldebas.github.io/hero-background.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Matthieu Chaldebas">
+    
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mchaldebas.github.io/">
+    <meta property="twitter:title" content="Matthieu Chaldebas | PhD Candidate in Bioinformatics & Machine Learning">
+    <meta property="twitter:description" content="PhD Candidate applying machine learning to decode the genetic basis of human disease. Expert in WES/WGS analysis, RNA-seq, and developing tools like 5ULTRA.">
+    <meta property="twitter:image" content="https://mchaldebas.github.io/hero-background.jpg">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#785dfe">
+    <meta name="msapplication-TileColor" content="#785dfe">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Matthieu Chaldebas">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://mchaldebas.github.io/">
+    
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    <link rel="preload" href="hero-background.jpg" as="image">
+    
+    <!-- Fonts and Styles -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Matthieu Chaldebas",
+        "jobTitle": "PhD Candidate in Bioinformatics",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "The Rockefeller University"
+        },
+        "alumniOf": {
+            "@type": "Organization",
+            "name": "Université Paris Cité"
+        },
+        "url": "https://mchaldebas.github.io",
+        "sameAs": [
+            "https://www.linkedin.com/in/matthieu-chaldebas-944092137",
+            "https://github.com/mchaldebas"
+        ],
+        "knowsAbout": [
+            "Bioinformatics",
+            "Machine Learning",
+            "Genomics",
+            "WES/WGS Analysis",
+            "RNA-seq",
+            "Python",
+            "R"
+        ]
+    }
+    </script>
 </head>
 
 <body>
@@ -22,11 +98,30 @@
             <div class="nav-logo">
                 <a href="#hero">Matthieu Chaldebas</a>
             </div>
-            <ul class="nav-links">
+            <div class="nav-actions">
+                <ul class="nav-links desktop-nav">
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#skills-education">Skills & Education</a></li>
+                    <li><a href="Matthieu_Chaldebas_CV.pdf" target="_blank" class="nav-button">Download CV</a></li>
+                </ul>
+                <button id="mobile-nav-toggle" class="mobile-nav-toggle" aria-label="Toggle mobile navigation">
+                    <span></span><span></span><span></span>
+                </button>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light theme">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                    <i class="fas fa-sun" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-nav-menu" class="mobile-nav-menu">
+            <ul class="mobile-nav-links">
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#publications">Publications</a></li>
                 <li><a href="#skills-education">Skills & Education</a></li>
-                <li><a href="Matthieu_Chaldebas_CV.pdf" target="_blank" class="nav-button">Download CV</a></li>
+                <li><a href="Matthieu_Chaldebas_CV.pdf" target="_blank">Download CV</a></li>
             </ul>
         </div>
     </nav>
@@ -245,22 +340,5 @@
         </div>
     </footer>
     <script src="script.js"></script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const navButton = document.querySelector('.nav-button');
-
-            if (navButton) {
-                navButton.addEventListener('mousemove', e => {
-                    const rect = navButton.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    navButton.style.setProperty('--mouse-x', `${x}px`);
-                    navButton.style.setProperty('--mouse-y', `${y}px`);
-                });
-            }
-        });
-        document.getElementById('copyright-year').innerHTML = `© ${new Date().getFullYear()} Matthieu Chaldebas. All Rights Reserved.`;
-    </script>
 </body>
 </html>
