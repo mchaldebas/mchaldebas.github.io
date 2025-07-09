@@ -356,7 +356,7 @@ h2.visible::after {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-size: 150%;
+    background-size: 130%;
     text-align: center;
     background-attachment: fixed;
     overflow: hidden;
@@ -370,6 +370,7 @@ h2.visible::after {
     pointer-events: none;
     background: linear-gradient(135deg, rgba(120,93,254,0) 0%, rgba(120,93,254,0.04) 10%, rgba(13,17,23,0.55) 130%);
 }
+
 .hero-content-container,
 .hero-text,
 .contact-links {
@@ -745,7 +746,7 @@ h1 {
 
 /* --- Subtle Hero Gradient --- */
 #hero {
-    background-image: linear-gradient(135deg, rgba(120,93,254,0.08) 0%, rgba(13,17,23,0.85) 100%), url('hero-background.jpg');
+    background-image: url('hero-background.jpg');
 }
 
 /* --- Interactive Element Hover/Focus States --- */
