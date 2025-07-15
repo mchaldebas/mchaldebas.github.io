@@ -811,6 +811,21 @@ h1 {
 
 @media (max-width: 600px) {
     h1 { font-size: 2.5rem; }
+    .nav-container {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+    }
+    .nav-logo {
+      flex: 0 1 auto;
+      min-width: 0;
+    }
+    .nav-actions {
+      flex: 0 1 auto;
+      min-width: 0;
+      gap: 12px;
+    }
 }
 
 @media (orientation: portrait) {
