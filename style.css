@@ -297,7 +297,7 @@ h2.visible::after {
 .mobile-nav-menu {
     display: none;
     position: fixed;
-    top: 60px;
+    top: 0;
     left: 0;
     width: 100%;
     background-color: var(--current-bg-dark);
@@ -337,7 +337,6 @@ h2.visible::after {
     background-color: var(--current-highlight-bg);
     color: var(--primary-color);
     padding-left: 25px;
-    padding-top: 105px;
 }
 
 .mobile-nav-links a:last-child {
