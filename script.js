@@ -58,12 +58,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const heroSubtitle = document.querySelector('#hero .hero-subtitle');
 
     if (hero && heroTitle && heroSubtitle) {
-        hero.addEventListener('mousemove', (e) => {
+        function handleHeroMousemove(e) {
             const x = (e.clientX - window.innerWidth / 2) / window.innerWidth;
             const y = (e.clientY - window.innerHeight / 2) / window.innerHeight;
-
             hero.style.backgroundPosition = `calc(50% + ${x * -35}px) calc(50% + ${y * -35}px)`;
-
             const shadowX = x * -40;
             const shadowY = y * -40;
             const titleShadow = `
@@ -71,15 +69,33 @@ document.addEventListener('DOMContentLoaded', function() {
                 ${shadowX / 2}px ${shadowY / 2}px 15px rgba(0, 0, 0, 0.4),
                 ${shadowX}px ${shadowY}px 30px rgba(0, 0, 0, 0.3)
             `;
-
             const subtitleShadow = `
                 ${shadowX / 4}px ${shadowY / 4}px 3px rgba(0, 0, 0, 0.7),
                 ${shadowX / 2}px ${shadowY / 2}px 10px rgba(0, 0, 0, 0.5)
             `;
-            
             heroTitle.style.textShadow = titleShadow;
             heroSubtitle.style.textShadow = subtitleShadow;
-        });
+        }
+        function enableHeroParallax() {
+            hero.addEventListener('mousemove', handleHeroMousemove);
+            hero.style.backgroundAttachment = 'fixed';
+        }
+        function disableHeroParallax() {
+            hero.removeEventListener('mousemove', handleHeroMousemove);
+            hero.style.backgroundAttachment = 'scroll';
+            hero.style.backgroundPosition = '';
+            heroTitle.style.textShadow = '';
+            heroSubtitle.style.textShadow = '';
+        }
+        function checkHeroParallax() {
+            if (window.innerWidth >= 900) {
+                enableHeroParallax();
+            } else {
+                disableHeroParallax();
+            }
+        }
+        checkHeroParallax();
+        window.addEventListener('resize', checkHeroParallax);
     }
 
     // --- Show/Hide Nav on Scroll ---
