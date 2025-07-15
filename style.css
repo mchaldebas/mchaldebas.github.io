@@ -768,9 +768,6 @@ h1 {
     .skills-education-grid { 
         grid-template-columns: 1fr; 
     }
-    #hero {
-        background-attachment: scroll;
-    }
 }
 
 @media (max-width: 768px) {
@@ -805,8 +802,6 @@ h1 {
         align-items: flex-start;
         gap: 10px;
     }
-    
-    /* Removed background-attachment override to preserve parallax effect on mobile */
 }
 
 @media (max-width: 600px) {
