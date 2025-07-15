@@ -337,6 +337,7 @@ h2.visible::after {
     background-color: var(--current-highlight-bg);
     color: var(--primary-color);
     padding-left: 25px;
+    padding-top: 25px;
 }
 
 .mobile-nav-links a:last-child {
