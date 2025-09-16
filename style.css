@@ -820,6 +820,12 @@ h1 {
     .desktop-nav { display: none; }
     .mobile-nav-toggle { display: flex; }
     .mobile-nav-menu { display: block; }
+    #main-nav {
+        width: 90%;
+        max-width: 400px;
+        left: 5%;
+        transform: none;
+    }
     
     .contact-links {
         flex-direction: column;
