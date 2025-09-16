@@ -115,8 +115,8 @@ h2.visible::after {
 
     /* --- Glassmorphism Effect --- */
     background-color: rgba(120, 93, 254, 0.1);
-    backdrop-filter: blur(25px); /* MODIFIED: Increased blur from 15px to 25px */
-    -webkit-backdrop-filter: blur(25px); /* MODIFIED: Increased blur for Safari */
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
 
     /* --- Rounded Corners & Border --- */
     border-radius: 18px; /* Rounded angles */
@@ -132,8 +132,8 @@ h2.visible::after {
     justify-content: space-between;
     align-items: center;
     height: 60px;
-    width: 100%; /* MODIFIED: Allow container to fill the nav bar */
-    padding: 0 25px; /* MODIFIED: Add direct padding to control space from edges */
+    width: 100%;
+    padding: 0 5px;
 }
 
 /* Light theme style for the main nav bar */
@@ -321,13 +321,13 @@ h2.visible::after {
     z-index: 999;
 
     /* --- Glassmorphism Effect --- */
-    background-color: rgba(120, 93, 254, 0.15);
+    background-color: rgba(22, 27, 34, 0.8);
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
 
     /* --- Rounded Corners & Border --- */
     border-radius: 18px; /* This creates the rounded angles */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border to catch light */
+    border: 1px solid rgba(120, 93, 254, 0.25);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);  /* Soft shadow for a floating effect */
 
     /* --- Animation --- */
