@@ -294,50 +294,62 @@ h2.visible::after {
 .mobile-nav-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -6px);
 }
-
 .mobile-nav-menu {
-    display: none;
+    display: block; /* Use block and control visibility with opacity and transform */
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--current-bg-dark);
-    border-bottom: 1px solid var(--current-border-color);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    top: 80px;      /* Adjust this value to create space from the top nav bar */
+    left: 5%;       /* Position from the left edge of the screen */
+    width: 90%;     /* Make it narrower than the screen width */
+    max-width: 400px; /* Optional: Set a maximum width for larger screens */
     z-index: 999;
-    transform: translateY(-100%);
-    transition: transform 0.3s ease;
+
+    /* --- Glassmorphism Effect --- */
+    background-color: rgba(120, 93, 254, 0.15); /* Semi-transparent purple */
+    backdrop-filter: blur(15px);                  /* The "glass" blur effect */
+    -webkit-backdrop-filter: blur(15px);          /* For Safari browser support */
+
+    /* --- Rounded Corners & Border --- */
+    border-radius: 18px; /* This creates the rounded angles */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border to catch light */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);  /* Soft shadow for a floating effect */
+
+    /* --- Animation --- */
+    opacity: 0; /* Start hidden */
+    pointer-events: none; /* Prevent clicks when hidden */
+    transform: translateY(-20px) scale(0.95); /* Start slightly up and smaller */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    overflow: hidden; /* Ensures the content respects the rounded corners */
 }
 
+/* Style for when the menu is active/visible */
 .mobile-nav-menu.active {
-    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto; /* Allow clicks when visible */
+    transform: translateY(0) scale(1); /* Animate to its final position */
 }
 
+/* --- Links inside the menu --- */
 .mobile-nav-links {
     list-style: none;
-    padding: 20px 0;
-    margin: 0;
-}
-
-.mobile-nav-links li {
+    padding: 10px; /* Add some padding inside the menu */
     margin: 0;
 }
 
 .mobile-nav-links a {
     display: block;
-    padding: 15px 20px;
+    padding: 12px 20px;
     color: var(--current-text-dark);
     text-decoration: none;
     font-weight: 500;
-    transition: all 0.3s ease;
-    border-bottom: 1px solid var(--current-border-color);
+    border-radius: 12px; /* Round the corners of the links as well */
+    transition: background-color 0.2s ease, color 0.2s ease;
+    border-bottom: none; /* Remove the old border */
 }
 
 .mobile-nav-links a:hover {
-    background-color: var(--current-highlight-bg);
-    color: var(--primary-color);
-    padding-left: 25px;
+    background-color: rgba(120, 93, 254, 0.25); /* Stronger purple on hover */
+    color: #fff; /* Brighter text color on hover */
+    padding-left: 20px; /* Keep the padding consistent */
 }
 
 .mobile-nav-links a:last-child {
