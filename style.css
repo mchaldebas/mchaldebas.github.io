@@ -819,16 +819,21 @@ h1 {
     /* Mobile Navigation */
     .desktop-nav { display: none; }
     .mobile-nav-toggle { display: flex; }
-    .mobile-nav-menu { display: block; }
+    .mobile-nav-menu { display: block;
+        background-color: rgba(22, 27, 34, 0.95); }
     #main-nav {
         width: 90%;
         max-width: 400px;
         left: 5%;
         transform: none;
-        background-color: rgba(22, 27, 34, 0.97);
+        background-color: rgba(22, 27, 34, 0.95);
     }
     [data-theme="light"] #main-nav {
-        background-color: rgba(255, 255, 255, 0.95);
+        background-color: rgba(255, 255, 255, 0.90);
+    }
+    [data-theme="light"] .mobile-nav-menu {
+        /* Increased opacity for light mode */
+        background-color: rgba(255, 255, 255, 0.9);
     }
     .contact-links {
         flex-direction: column;
