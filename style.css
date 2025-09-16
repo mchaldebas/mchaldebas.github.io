@@ -319,8 +319,8 @@ h2.visible::after {
 
     /* --- Glassmorphism Effect --- */
     background-color: rgba(120, 93, 254, 0.15); /* Semi-transparent purple */
-    backdrop-filter: blur(15px);                  /* The "glass" blur effect */
-    -webkit-backdrop-filter: blur(15px);          /* For Safari browser support */
+    backdrop-filter: blur(5px);                  /* The "glass" blur effect */
+    -webkit-backdrop-filter: blur(5px);          /* For Safari browser support */
 
     /* --- Rounded Corners & Border --- */
     border-radius: 18px; /* This creates the rounded angles */
