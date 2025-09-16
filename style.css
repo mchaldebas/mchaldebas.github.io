@@ -103,24 +103,38 @@ h2.visible::after {
 
 /* --- 3. FLOATING NAVIGATION --- */
 #main-nav {
-    background-color: rgba(13, 17, 23, 0.85);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--current-border-color);
+    /* --- Positioning & Sizing --- */
     position: fixed;
-    top: -100px;
-    left: 0;
-    width: 100%;
+    top: -100px; /* Starts hidden above the viewport */
+    left: 50%;
+    transform: translateX(-50%); /* This is the key to centering a fixed element */
+    width: 90%;
+    max-width: 960px; /* Optional: Constrain width on very large screens */
     z-index: 1000;
+    margin-top: 20px; /* This creates the floating space from the top edge */
+
+    /* --- Glassmorphism Effect --- */
+    background-color: rgba(120, 93, 254, 0.1);  /* Hint of purple, adjust as needed */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    /* --- Rounded Corners & Border --- */
+    border-radius: 18px; /* Rounded angles */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+
+    /* --- Animation --- */
     transition: top 0.4s ease-in-out;
 }
 
+/* Light theme style for the main nav bar */
 [data-theme="light"] #main-nav {
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: rgba(255, 255, 255, 0.7); /* Lighter glass for light mode */
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 #main-nav.visible {
-    top: 0;
+    top: 0; /* Animate into view. The margin-top creates the space. */
 }
 
 .nav-container {
@@ -133,7 +147,7 @@ h2.visible::after {
 .nav-actions {
     display: flex;
     align-items: center;
-    gap: 24px; /* or whatever spacing you prefer */
+    gap: 24px;
 }
 
 .nav-logo a {
@@ -191,8 +205,8 @@ h2.visible::after {
     width: 100px;
     height: 100px;
     background-image: radial-gradient(
-        circle, 
-        rgba(var(--rgb-primary), 0.5) 0%, 
+        circle,
+        rgba(var(--rgb-primary), 0.5) 0%,
         rgba(var(--rgb-primary), 0) 80%
     );
     transform: translate(-50%, -50%);
