@@ -114,9 +114,9 @@ h2.visible::after {
     margin-top: 20px; /* This creates the floating space from the top edge */
 
     /* --- Glassmorphism Effect --- */
-    background-color: rgba(120, 93, 254, 0.1);  /* Hint of purple, adjust as needed */
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    background-color: rgba(120, 93, 254, 0.1);
+    backdrop-filter: blur(25px); /* MODIFIED: Increased blur from 15px to 25px */
+    -webkit-backdrop-filter: blur(25px); /* MODIFIED: Increased blur for Safari */
 
     /* --- Rounded Corners & Border --- */
     border-radius: 18px; /* Rounded angles */
@@ -127,6 +127,15 @@ h2.visible::after {
     transition: top 0.4s ease-in-out;
 }
 
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    width: 100%; /* MODIFIED: Allow container to fill the nav bar */
+    padding: 0 25px; /* MODIFIED: Add direct padding to control space from edges */
+}
+
 /* Light theme style for the main nav bar */
 [data-theme="light"] #main-nav {
     background-color: rgba(255, 255, 255, 0.7); /* Lighter glass for light mode */
@@ -135,13 +144,6 @@ h2.visible::after {
 
 #main-nav.visible {
     top: 0; /* Animate into view. The margin-top creates the space. */
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 60px;
 }
 
 .nav-actions {
@@ -308,6 +310,7 @@ h2.visible::after {
 .mobile-nav-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -6px);
 }
+
 .mobile-nav-menu {
     display: block; /* Use block and control visibility with opacity and transform */
     position: fixed;
@@ -318,9 +321,9 @@ h2.visible::after {
     z-index: 999;
 
     /* --- Glassmorphism Effect --- */
-    background-color: rgba(120, 93, 254, 0.15); /* Semi-transparent purple */
-    backdrop-filter: blur(5px);                  /* The "glass" blur effect */
-    -webkit-backdrop-filter: blur(5px);          /* For Safari browser support */
+    background-color: rgba(120, 93, 254, 0.15);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
 
     /* --- Rounded Corners & Border --- */
     border-radius: 18px; /* This creates the rounded angles */
