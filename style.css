@@ -109,7 +109,7 @@ h2.visible::after {
     left: 50%;
     transform: translateX(-50%); /* This is the key to centering a fixed element */
     width: 96%;
-    max-width: 1100px; /* Optional: Constrain width on very large screens */
+    max-width: 960px; /* Optional: Constrain width on very large screens */
     z-index: 1000;
     margin-top: 20px; /* This creates the floating space from the top edge */
 
