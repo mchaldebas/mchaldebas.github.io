@@ -317,7 +317,6 @@ h2.visible::after {
     top: 80px;      /* Adjust this value to create space from the top nav bar */
     left: 5%;       /* Position from the left edge of the screen */
     width: 90%;     /* Make it narrower than the screen width */
-    max-width: 400px; /* Optional: Set a maximum width for larger screens */
     z-index: 999;
 
     /* --- Glassmorphism Effect --- */
@@ -388,7 +387,12 @@ h2.visible::after {
     justify-content: center;
     padding: 20px;
     position: relative;
+    background-image: url('hero-background.jpg');
+    background-position: center;
+    background-size: 130%;
+    background-repeat: no-repeat;
     text-align: center;
+    background-attachment: fixed;
     overflow: hidden;
 }
 
