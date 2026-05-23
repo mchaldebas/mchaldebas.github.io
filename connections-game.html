@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>Date Connections · For Christian</title>
+<title>Date Connections · Vol. II</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -111,6 +111,14 @@
     margin-bottom: 22px;
   }
 
+  .warning {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--accent);
+    margin-top: 8px;
+  }
+
   .solved {
     margin-bottom: 10px;
     display: flex;
@@ -215,7 +223,6 @@
     50% { transform: translateY(-8px); }
   }
 
-  /* Tile font-size adjustments for long names */
   .tile[data-len="long"] { font-size: 10px; }
   .tile[data-len="xlong"] { font-size: 9px; }
 
@@ -230,10 +237,7 @@
     letter-spacing: 0.3px;
   }
 
-  .dots {
-    display: flex;
-    gap: 6px;
-  }
+  .dots { display: flex; gap: 6px; }
 
   .dot {
     width: 12px;
@@ -267,25 +271,10 @@
     border-radius: 999px;
   }
 
-  button:hover:not(:disabled) {
-    background: var(--ink);
-    color: var(--paper);
-  }
-
-  button:disabled {
-    opacity: 0.35;
-    cursor: not-allowed;
-  }
-
-  button.primary {
-    background: var(--ink);
-    color: var(--paper);
-  }
-
-  button.primary:disabled {
-    background: #999;
-    border-color: #999;
-  }
+  button:hover:not(:disabled) { background: var(--ink); color: var(--paper); }
+  button:disabled { opacity: 0.35; cursor: not-allowed; }
+  button.primary { background: var(--ink); color: var(--paper); }
+  button.primary:disabled { background: #999; border-color: #999; }
 
   .toast {
     position: fixed;
@@ -306,10 +295,7 @@
     z-index: 100;
   }
 
-  .toast.show {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
   .endgame {
     text-align: center;
@@ -385,15 +371,16 @@
 <div class="app">
   <div class="header">
     <span class="eyebrow">A Puzzle For Two</span>
-    <span class="date-stamp">Vol. I · May MMXXVI</span>
+    <span class="date-stamp">Vol. II · The Hard One</span>
   </div>
 
-  <div class="subtitle">From Sottocasa to Tartuffe —</div>
+  <div class="subtitle">You thought Vol. I was easy?</div>
   <h1>Date <span class="amp">&</span> Connections</h1>
 
   <p class="instructions">
-    Find four groups of four. Every tile is something we did together between October and April. Some belong in places you wouldn't expect.
+    Find four groups of four. Some tiles look like they obviously belong somewhere — and they don't. Look twice. Read carefully.
   </p>
+  <p class="warning">— this one will hurt a little —</p>
 
   <div class="solved" id="solved"></div>
   <div class="grid" id="grid"></div>
@@ -421,7 +408,7 @@
   </div>
 
   <div class="footer">
-    <span>No. 001 · 51 Dates Edition</span>
+    <span>No. 002 · The Hard One</span>
     <span class="signature">made with <span class="heart">♥</span> for you</span>
   </div>
 </div>
@@ -431,38 +418,36 @@
     {
       id: "yellow",
       difficulty: 1,
-      title: "NYC ice — skated or watched",
-      blurb: "Bryant Park and Brooklyn Bridge we skated together. Sky Rink and Central Park — where I watched you play.",
-      items: ["Bryant Park", "Brooklyn Bridge", "Sky Rink", "Central Park"]
+      title: "Techno nights we danced at",
+      blurb: "Four dance floors we shared — not stages, not gigs you played, just nights we both moved.",
+      items: ["IHM", "Pegassi", "Knockdown Center", "Basement"]
     },
     {
       id: "green",
       difficulty: 2,
-      title: "Restaurants we ate at",
-      blurb: "Italian, Filipino, Ukrainian, Jewish deli — four cuisines, four neighborhoods, four meals.",
-      items: ["Via Carota", "Naks", "Veselka", "Katz"]
+      title: "Date entries that are women's first names",
+      blurb: "Each tile reads as a place, an opera, a concert series, or a film — but strip the context, and they're all just names: Gabriela, Peggy, Carmen, Valentina.",
+      items: ["Gabriela", "Peggy", "Carmen", "Valentina"]
     },
     {
       id: "blue",
       difficulty: 3,
-      title: "Adaptations of pre-1900 works",
-      blurb: "Mérimée (1845), Dumas fils (1852), Molière (1664), Brontë (1847) — classics brought to the stage.",
-      items: ["Carmen", "La Traviata", "Tartuffe", "Wuthering Heights"]
+      title: "Athletic / sport dates",
+      blurb: "Hockey games, hockey practice, and one sweaty studio. Anything where one of us was moving hard.",
+      items: ["Hockey in the park", "Rangers vs Predators", "Hot yoga", "Mighty Geese"]
     },
     {
       id: "purple",
       difficulty: 4,
-      title: "Spots we keep ending up at",
-      blurb: "The recurring ones. Carousel before, Cellar Dog after, Basement all night, Smør the morning after at your place. Not headline dates — just the places we keep showing up.",
-      items: ["Cellar Dog", "Carousel", "Basement", "Smør"]
+      title: "Animals hiding inside the word",
+      blurb: "Bry-ANT Park · Ves-ELK-a · Pi-RAT-es Studio · Hell-FISH. Each name has a creature buried inside. Mighty Geese is the trap: geese are literal, not hidden.",
+      items: ["Bryant Park", "Veselka", "Pirates Studio", "Hellfish"]
     }
   ];
 
-  // Build lookup
   const itemToCategory = {};
   CATEGORIES.forEach(cat => cat.items.forEach(item => itemToCategory[item] = cat));
 
-  // State
   let allItems = CATEGORIES.flatMap(c => c.items);
   let solvedCategories = [];
   let selected = [];
@@ -470,7 +455,6 @@
   const MAX_MISTAKES = 4;
   let gameOver = false;
 
-  // DOM
   const grid = document.getElementById("grid");
   const solvedEl = document.getElementById("solved");
   const dots = document.getElementById("dots").children;
@@ -577,26 +561,19 @@
 
   async function onSubmit() {
     if (selected.length !== 4 || gameOver) return;
-
-    // Check if all selected belong to same category
     const cats = selected.map(item => itemToCategory[item]);
     const allSame = cats.every(c => c.id === cats[0].id);
 
     await bounceSelected();
 
     if (allSame) {
-      // Correct!
       const cat = cats[0];
       solvedCategories.push(cat);
       selected = [];
       renderSolved();
       render();
-
-      if (solvedCategories.length === 4) {
-        endGame(true);
-      }
+      if (solvedCategories.length === 4) endGame(true);
     } else {
-      // Wrong. Check if "one away"
       const counts = {};
       cats.forEach(c => counts[c.id] = (counts[c.id] || 0) + 1);
       const maxCount = Math.max(...Object.values(counts));
@@ -605,22 +582,17 @@
       await shakeSelected();
       mistakes++;
       dots[MAX_MISTAKES - mistakes].classList.add("lost");
-
       if (oneAway) showToast("One away…");
 
-      // Clear selection after a wrong guess
       selected = [];
       render();
 
-      if (mistakes >= MAX_MISTAKES) {
-        endGame(false);
-      }
+      if (mistakes >= MAX_MISTAKES) endGame(false);
     }
   }
 
   function endGame(won) {
     gameOver = true;
-    // Reveal remaining categories
     const remaining = CATEGORIES.filter(c => !solvedCategories.some(s => s.id === c.id));
     remaining.sort((a, b) => a.difficulty - b.difficulty);
     remaining.forEach(c => solvedCategories.push(c));
@@ -629,13 +601,13 @@
 
     if (won) {
       const perfect = mistakes === 0;
-      endgameTitle.textContent = perfect ? "Perfect 🎉" : "Solved";
+      endgameTitle.textContent = perfect ? "Untouchable 🔥" : "Solved";
       endgameText.textContent = perfect
-        ? "Zero mistakes. You actually paid attention."
-        : `Got there with ${mistakes} ${mistakes === 1 ? "mistake" : "mistakes"}. Worth every one.`;
+        ? "Zero mistakes on the hard one. I underestimated you."
+        : `Got there with ${mistakes} ${mistakes === 1 ? "mistake" : "mistakes"}. The traps got you — that was the point.`;
     } else {
-      endgameTitle.textContent = "Next time";
-      endgameText.textContent = "The answers are above. Pour a drink and try again — I'll wait.";
+      endgameTitle.textContent = "Not this time";
+      endgameText.textContent = "The wordplay got you. Look at purple — the animals were hiding the whole time.";
     }
     endgameEl.classList.add("show");
     updateButtons();
@@ -645,7 +617,6 @@
     if (gameOver) return;
     const unsolved = allItems.filter(item => !solvedCategories.some(c => c.items.includes(item)));
     const shuffled = shuffle(unsolved);
-    // Replace order in allItems for the unsolved portion
     let idx = 0;
     allItems = allItems.map(item =>
       solvedCategories.some(c => c.items.includes(item)) ? item : shuffled[idx++]
@@ -675,7 +646,6 @@
   shuffleBtn.addEventListener("click", onShuffle);
   replayBtn.addEventListener("click", reset);
 
-  // Init
   allItems = shuffle(allItems);
   render();
 </script>
