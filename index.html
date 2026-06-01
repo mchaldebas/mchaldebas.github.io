@@ -104,6 +104,7 @@
                 <ul class="nav-links desktop-nav">
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#publications">Publications</a></li>
+                    <li><a href="#conferences">Conferences</a></li>
                     <li><a href="#skills-education">Skills & Education</a></li>
                     <li><a href="Matthieu_Chaldebas_CV.pdf" target="_blank" class="nav-button">Download CV</a></li>
                 </ul>
@@ -122,6 +123,7 @@
             <ul class="mobile-nav-links">
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#publications">Publications</a></li>
+                <li><a href="#conferences">Conferences</a></li>
                 <li><a href="#skills-education">Skills & Education</a></li>
                 <li><a href="Matthieu_Chaldebas_CV.pdf" target="_blank">Download CV</a></li>
             </ul>
@@ -136,6 +138,38 @@
                     <h1>Matthieu Chaldebas</h1>
                     <p class="hero-subtitle">ML Scientist · Genomics</p>
                     <p class="hero-tagline">Building end-to-end ML frameworks to decode how genetic variants drive disease</p>
+
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <span class="stat-number">13</span>
+                            <span class="stat-label">Publications</span>
+                        </div>
+                        <div class="hero-stat-divider"></div>
+                        <div class="hero-stat">
+                            <span class="stat-number">263+</span>
+                            <span class="stat-label">Citations</span>
+                        </div>
+                        <div class="hero-stat-divider"></div>
+                        <div class="hero-stat">
+                            <span class="stat-number">8</span>
+                            <span class="stat-label">h-index</span>
+                        </div>
+                        <div class="hero-stat-divider"></div>
+                        <div class="hero-stat">
+                            <span class="stat-number">4</span>
+                            <span class="stat-label">International Talks</span>
+                        </div>
+                        <div class="hero-stat-divider"></div>
+                        <div class="hero-stat">
+                            <span class="stat-number">409K</span>
+                            <span class="stat-label">WGS Participants</span>
+                        </div>
+                    </div>
+
+                    <p class="hero-journals">Published in <em>Nature</em> · <em>Science Immunology</em> · <em>PNAS</em> · <em>Immunity</em> · <em>AJHG</em> · <em>J. Clin. Investigation</em> · <em>J. Exp. Medicine</em></p>
+
+                    <p class="hero-seeking">Seeking postdoctoral &amp; industry research positions · Available 2026</p>
+
                     <div class="contact-links">
                         <a href="mailto:Matthieu.Chaldebas@gmail.com" class="button-primary"><i class="fas fa-envelope"></i> Email Me</a>
                         <a href="https://www.linkedin.com/in/matthieu-chaldebas-944092137" target="_blank" class="button-primary"><i class="fab fa-linkedin"></i> LinkedIn</a>
@@ -156,6 +190,7 @@
     <section id="experience">
         <div class="container">
             <h2>Professional Experience</h2>
+            <p class="section-intro">I build ML frameworks that decode what non-coding genetic variants mechanistically do — not just whether evolution preserved them. My work spans from model training on population-scale WGS data to rare-variant discovery, target identification, and multi-omic validation in patient cohorts.</p>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
@@ -167,9 +202,9 @@
                             <h4>PhD Candidate</h4>
                             <p class="timeline-role-meta">2022 – Present</p>
                             <ul>
-                                <li>Designed and shipped <strong>5ULTRA</strong> end-to-end: trained ML models on 28 million gnomAD variants, built a public prediction webserver, and published findings in <strong>AJHG (2026)</strong>.</li>
-                                <li>Applied 5ULTRA to identify novel disease-causing mechanisms in cancer (<em>ABI1</em>, <em>NRAS</em>) and infectious disease (<em>TNF</em>, <em>RPSA</em>), demonstrating real-world variant prioritization at scale.</li>
-                                <li>Selected to deliver a <strong>Platform Presentation</strong> at the <strong>ASHG 2025</strong> Annual Meeting in Boston — one of the top-tier oral presentations at the field's flagship conference.</li>
+                                <li>Engineered and deployed <strong>5ULTRA</strong>, a Python ML framework combining SpliceAI, uORF databases, and a Random Forest classifier — achieving <strong>AUC 0.82 vs. 0.75 (CADD)</strong> on independent ClinVar benchmarks; validated predictions with <strong>Olink proteomics</strong> (n = 46,362, cis-pQTL effect sizes >5× baseline); published 1st author in <strong>AJHG (2026)</strong>.</li>
+                                <li>Applied 5ULTRA to identify novel disease-causing mechanisms in cancer (<em>ABI1</em>, <em>NRAS</em>) and infectious disease (<em>TNF</em>, <em>RPSA</em>), enabling mechanistic <strong>target identification</strong> at genome-wide scale.</li>
+                                <li>Conducted a population-scale rare-variant burden study in <strong>408,423 UK Biobank WGS participants</strong> across 59 quantitative traits — achieving a <strong>1.8× improvement</strong> over CADD and identifying 74 genome-wide significant associations including 12 novel targets (manuscript in preparation).</li>
                             </ul>
                         </div>
 
@@ -177,7 +212,7 @@
                             <h4>Bioinformatics Assistant</h4>
                             <p class="timeline-role-meta">2021 – 2022</p>
                             <ul>
-                                <li>Scaled and maintained variant-calling pipelines across <strong>26,000+ WES/WGS datasets</strong> using GATK, VEP, and custom Snakemake workflows on HPC clusters.</li>
+                                <li>Built and maintained germline variant-calling pipelines across <strong>26,000+ patient WES/WGS datasets</strong> (GATK, VEP, Snakemake on HPC), enabling disease-gene discoveries published in <em>Nature</em>, <em>Science Immunology</em>, and <em>Immunity</em>.</li>
                                 <li>Performed bulk and single-cell RNA-seq analyses (differential expression, pathway enrichment, Seurat) across multiple disease cohorts.</li>
                                 <li>Co-developed <strong>AGAIN</strong>, a genome-wide intronic splicing variant detector, contributing key features and WES/WGS validation (PNAS, 2023).</li>
                             </ul>
@@ -190,26 +225,18 @@
                         <h3>Data Scientist Intern</h3>
                         <p class="timeline-meta">BioMérieux, Lyon, France | 6 Months – 2021</p>
                         <ul>
-                            <li>Optimized supervised ML models (classification) to predict antibiotic resistance from microbial genomic data.</li>
-                            <li>Improved model generalization by designing phylogeny-aware cross-validation schemes, reducing overfitting across bacterial clades.</li>
+                            <li>Developed supervised Lasso ML models for antibiotic resistance prediction from microbial genomic data, extending cross-validation to account for complex phylogenetic structures.</li>
+                            <li>Implemented novelty detection algorithms to clean and standardize heterogeneous clinical datasets, improving downstream model reliability.</li>
                         </ul>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>Data Engineer Intern</h3>
-                        <p class="timeline-meta">CEA, Paris Saclay, France | 4 Months – 2019</p>
+                        <h3>Earlier Internships</h3>
+                        <p class="timeline-meta">CEA Paris Saclay (4 months, 2019) · Imagine Institute, Paris (2 months, 2018)</p>
                         <ul>
-                            <li>Engineered data management pipelines for diverse biological datasets, enabling systematic phylogenetic analysis and 3D protein modeling.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Research Intern</h3>
-                        <p class="timeline-meta">Imagine Institute, Paris, France | 2 Months – 2018</p>
-                        <ul>
-                            <li>Executed Western blot and quantitative RT-PCR assays to assess the effects of specific drugs on target gene expression.</li>
+                            <li>Built bioinformatics data pipelines for phylogenetic analysis and 3D protein modeling (CEA).</li>
+                            <li>Western blot and RT-PCR assays to evaluate drug effects on gene expression (Imagine Institute).</li>
                         </ul>
                     </div>
                 </div>
@@ -220,7 +247,7 @@
     <!-- PUBLICATIONS SECTION -->
     <section id="publications">
         <div class="container">
-            <h2>Publications & Research Highlights</h2>
+            <h2>Publications</h2>
             <!-- Featured Publication: 5ULTRA (AJHG Published & ASHG Talk) -->
             <article class="publication-card featured fade-in">
                 <div class="publication-tag">Selected for Platform Presentation — ASHG 2025</div>
@@ -231,7 +258,7 @@
                     <br><em>The American Journal of Human Genetics (AJHG)</em>, 2026.
                 </p>
                 <div class="contribution-highlight">
-                    <p><strong>Research Highlight:</strong> Presented as a <strong>Platform Talk</strong> at the ASHG 2025 Annual Meeting. We developed <strong>5ULTRA</strong>, a machine-learning framework to prioritize 5'UTR variants. By analyzing 28 million variants from gnomAD, we identified novel disease-causing mechanisms in cancer (<em>ABI1</em>, <em>NRAS</em>) and infectious diseases (<em>TNF</em>, <em>RPSA</em>).</p>
+                    <p><strong>Research Highlight:</strong> Presented as a <strong>Platform Talk</strong> at ASHG 2025. We developed <strong>5ULTRA</strong>, a Random Forest classifier integrating SpliceAI and uORF biology to prioritize 5'UTR variants — achieving <strong>AUC 0.82 vs. 0.75 (CADD)</strong> on independent ClinVar benchmarks. Validated predictions using <strong>Olink proteomics</strong> (n = 46,362): cis-pQTL variants predicted by 5ULTRA carry effect sizes >5× larger than baseline. Applied to identify disease-causing mechanisms in cancer (<em>ABI1</em>, <em>NRAS</em>) and infectious diseases (<em>TNF</em>, <em>RPSA</em>).</p>
                 </div>
                 <div class="publication-links">
                     <a href="https://doi.org/10.1016/j.ajhg.2026.02.020" target="_blank">Read at AJHG <i class="fas fa-external-link-alt"></i></a>
@@ -240,13 +267,29 @@
                 </div>
             </article>
 
-            <!-- Featured Publication 2 -->
+            <!-- Featured Publication: UKB burden study (in preparation) -->
+            <article class="publication-card featured in-prep fade-in">
+                <div class="publication-tag">First Author · Manuscript in Preparation</div>
+                <div class="publication-status-badge in-prep">In Preparation · 2026</div>
+                <h3>Mechanistic 5'UTR Variant Scoring Expands Rare-Variant Discovery and Reveals Translational Dosage Control in the UK Biobank</h3>
+                <p class="publication-meta">
+                    <strong>Chaldebas M</strong>, Casanova JL#, Zhang P#, Cobat A#. (#Co-senior &amp; corresponding authors)
+                </p>
+                <div class="contribution-highlight">
+                    <p><strong>Research Highlight:</strong> Applied <strong>5ULTRA</strong> to <strong>408,423 UK Biobank WGS participants</strong> across 59 quantitative traits — achieving a <strong>1.8× improvement</strong> over CADD (74 vs. 41 genome-wide significant associations). Ablating 5ULTRA-annotated variants from CADD reduced its signal by <strong>39%</strong>, confirming mechanistic orthogonality. Among 12 novel discoveries absent from a concurrent UKB 5'UTR catalog, <em>NELFCD</em> reached −log₁₀P = 49.6 for platelet count. Plasma pQTL directional concordance (Hawkes et al., 2025) validated predicted translational effects at protein level. Reveals a bidirectional translational rheostat: 5'UTR loss-of-function burden effects are quantitatively comparable to exome protein-truncating variants (r = 0.68).</p>
+                </div>
+                <div class="publication-links">
+                    <span style="color: var(--current-text-light); font-size: 0.9rem;"><i class="fas fa-code-branch"></i> Code repository in preparation</span>
+                </div>
+            </article>
+
+            <!-- Featured Publication: AGAIN -->
             <article class="publication-card featured fade-in">
-                <div class="publication-tag">Featured Publication</div>
+                <div class="publication-tag">Co-Second Author · PNAS 2023</div>
                 <h3>Genome-wide detection of human intronic AG-gain variants located between splicing branchpoints and canonical splice acceptor sites</h3>
                 <p class="publication-meta">Zhang P, <strong>Chaldebas M*</strong>, Ogishi M*, et al. (*Equal contributions) <br><em>PNAS</em>, 2023.</p>
                 <div class="contribution-highlight">
-                    <p><strong>My Contribution:</strong> As a second author, I contributed to the development and validation of the AGAIN software. My role involved performing data analysis on WES/WGS datasets, developing some key features, and validating variant impacts.</p>
+                    <p><strong>My Contribution:</strong> As co-second author (equal contributions), I developed key algorithmic features and performed WES/WGS validation of variant impacts at genome-wide scale.</p>
                 </div>
                 <div class="publication-links">
                     <a href="https://doi.org/10.1073/pnas.2314225120" target="_blank">Read at PNAS <i class="fas fa-external-link-alt"></i></a>
@@ -257,26 +300,79 @@
             
             <!-- Other Publications -->
             <article class="publication-card fade-in">
-                <h3>Collaborative Contributions to High-Impact Studies</h3>
-                <p class="publication-meta">Beyond my own primary publications, a significant part of my work at The Rockefeller University has been enabling research for the lab's broader scientific portfolio — providing the genomic data infrastructure that underlies discoveries in infectious disease genetics and immunology.</p>
+                <h3>Collaborative Contributions</h3>
+                <p class="publication-meta">My bioinformatics work at The Rockefeller University directly supported gene discovery across the lab's portfolio in infectious disease and immunology — WES/WGS variant calling, bulk and single-cell RNA-seq, and custom pipeline development across cohort studies spanning thousands of patients.</p>
                 <div class="contribution-highlight">
-                    <p>Across cohort studies spanning thousands of patients, I have performed <strong>germline variant calling and annotation</strong> (WES/WGS via GATK & VEP), <strong>bulk and single-cell RNA-seq analysis</strong> (differential expression, pathway enrichment, Seurat), and <strong>custom pipeline development</strong> for disease-specific analyses — work that has directly supported the identification of novel monogenic etiologies of infectious disease and immune dysregulation.</p>
-                    <p style="margin-top: 15px;"><strong>Representative publications supported by this work:</strong></p>
+                    <p><strong>Publications supported by this work:</strong></p>
                     <ul>
-                       <li style="--i: 1;"><em>Nature</em> — Arias et al., 2024; Chan et al., 2024</li>
-                       <li style="--i: 2;"><em>Science Immunology</em> — Ogishi et al., 2025; Yatim et al., 2026</li>
-                       <li style="--i: 3;"><em>Immunity</em> — Ogishi et al., 2024</li>
-                       <li style="--i: 4;"><em>Genome Medicine</em> — Matuozzo et al., 2023; Conil et al., 2024</li>
-                       <li style="--i: 5;"><em>Journal of Experimental Medicine</em> — Chan et al., 2024</li>
-                       <li style="--i: 6;"><em>The Journal of Clinical Investigation</em> — Arango-Franco et al., 2024</li>
+                       <li><strong><em>Nature</em></strong> — <a href="https://doi.org/10.1038/s41586-024-07866-3" target="_blank">Arias et al., 2024</a></li>
+                       <li><strong><em>Nature</em></strong> — <a href="https://doi.org/10.1038/s41586-024-07745-x" target="_blank">Chan et al., 2024</a></li>
+                       <li><strong><em>Science Immunology</em></strong> — <a href="https://doi.org/10.1126/sciimmunol.ads7377" target="_blank">Ogishi et al., 2025</a></li>
+                       <li><strong><em>Science Immunology</em></strong> — <a href="https://doi.org/10.1126/sciimmunol.adz8360" target="_blank">Yatim et al., 2026</a></li>
+                       <li><strong><em>Immunity</em></strong> — <a href="https://doi.org/10.1016/j.immuni.2024.10.014" target="_blank">Ogishi et al., 2024</a></li>
+                       <li><strong><em>Genome Medicine</em></strong> — <a href="https://doi.org/10.1186/s13073-023-01173-8" target="_blank">Matuozzo et al., 2023</a></li>
+                       <li><strong><em>J. Experimental Medicine</em></strong> — <a href="https://doi.org/10.1084/jem.20231725" target="_blank">Chan et al., 2024</a></li>
+                       <li><strong><em>J. Clinical Investigation</em></strong> — <a href="https://doi.org/10.1172/JCI180251" target="_blank">Arango-Franco et al., 2024</a></li>
+                       <li><strong><em>Genome Medicine</em></strong> — <a href="https://doi.org/10.1186/s13073-025-01547-0" target="_blank">Conil et al., 2025</a></li>
                    </ul>
                 </div>
                 <div class="publication-links">
-                    <a href="https://scholar.google.com/citations?user=c2xVFBwAAAAJ&hl=en" target="_blank"><strong>258</strong> Total Citations on Google Scholar <i class="fas fa-graduation-cap"></i></a>
+                    <a href="https://scholar.google.com/citations?user=c2xVFBwAAAAJ&hl=en" target="_blank"><strong>263+</strong> Total Citations on Google Scholar <i class="fas fa-graduation-cap"></i></a>
                 </div>
            </article>
         </div>
     </section>
+    <!-- CONFERENCES & TALKS SECTION -->
+    <section id="conferences">
+        <div class="container">
+            <h2>Conferences & Talks</h2>
+            <div class="congress-grid">
+
+                <!-- ISMB 2026 -->
+                <div class="congress-card fade-in">
+                    <div class="congress-year">2026</div>
+                    <div class="congress-content">
+                        <h3>ISMB 2026</h3>
+                        <p class="congress-meta"><i class="fas fa-map-marker-alt"></i> Washington, DC, USA</p>
+                        <p>Talk — <strong>5ULTRA</strong>: genome-wide prioritization of 5'UTR variants impacting protein translation.</p>
+                    </div>
+                </div>
+
+                <!-- Webinaire Régulome 2026 -->
+                <div class="congress-card fade-in">
+                    <div class="congress-year">2026</div>
+                    <div class="congress-content">
+                        <h3><a href="https://bioinfo-diag.fr/blog/2026/webinaire-regulome/" target="_blank">Webinaire Régulome — bioinfo-diag.fr <i class="fas fa-external-link-alt" style="font-size:0.75em;"></i></a></h3>
+                        <p class="congress-meta"><i class="fas fa-video"></i> Online Webinar</p>
+                        <p>Invited talk — <strong>5ULTRA</strong>: genome-wide prioritization of 5'UTR variants impacting protein translation.</p>
+                    </div>
+                </div>
+
+                <!-- ASHG 2025 -->
+                <div class="congress-card fade-in">
+                    <div class="congress-year">2025</div>
+                    <div class="congress-content">
+                        <h3>ASHG 2025 Annual Meeting</h3>
+                        <p class="congress-meta"><i class="fas fa-map-marker-alt"></i> Boston, MA, USA</p>
+                        <div class="publication-tag">Platform Presentation</div>
+                        <p>Talk — <strong>5ULTRA</strong>: genome-wide prioritization of 5'UTR variants impacting protein translation.</p>
+                    </div>
+                </div>
+
+                <!-- Splicing 2025 -->
+                <div class="congress-card fade-in">
+                    <div class="congress-year">2025</div>
+                    <div class="congress-content">
+                        <h3><a href="https://www.splicing2025.com" target="_blank">Splicing 2025 <i class="fas fa-external-link-alt" style="font-size:0.75em;"></i></a></h3>
+                        <p class="congress-meta"><i class="fas fa-map-marker-alt"></i> Caparica, Lisbon, Portugal</p>
+                        <p>Presentation — <strong>AGAIN</strong>: genome-wide detection of intronic AG-gain splicing variants.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- SKILLS & EDUCATION SECTION -->
     <section id="skills-education">
         <div class="container skills-education-grid">
@@ -287,23 +383,27 @@
                 <div class="skill-category">
                     <h3>Machine Learning & Programming</h3>
                     <div class="skills-grid">
-                        <span class="skill-badge primary" data-tooltip="End-to-end ML: feature engineering, model training, validation, and deployment. Used scikit-learn, XGBoost, and custom frameworks to build 5ULTRA.">Machine Learning</span>
+                        <span class="skill-badge primary" data-tooltip="End-to-end ML: feature engineering, model training, validation, and deployment. Used scikit-learn, Random Forest, Lasso, and SMOTE to build 5ULTRA.">Machine Learning</span>
                         <span class="skill-badge primary" data-tooltip="Core language for all data analysis and ML pipelines: Pandas, NumPy, scikit-learn, matplotlib, seaborn.">Python</span>
                         <span class="skill-badge primary" data-tooltip="Statistical analysis, ggplot2 visualizations, Tidyverse, DESeq2, Seurat for single-cell RNA-seq.">R</span>
                         <span class="skill-badge secondary" data-tooltip="Scripting for pipeline automation, HPC job submission (Slurm), and data manipulation.">Bash</span>
+                        <span class="skill-badge secondary" data-tooltip="Integration of AlphaGenome deep learning predictions into variant scoring frameworks.">AlphaGenome</span>
                         <span class="skill-badge secondary" data-tooltip="Building interactive prediction webservers and tools (5ULTRA, AGAIN).">PHP, HTML & CSS</span>
                     </div>
                 </div>
 
-                <!-- Category 2: Genomics & Transcriptomics -->
+                <!-- Category 2: Genomics & Multi-Omics -->
                 <div class="skill-category">
-                    <h3>Genomics & Transcriptomics</h3>
+                    <h3>Genomics & Multi-Omics</h3>
                     <div class="skills-grid">
                         <span class="skill-badge primary" data-tooltip="Germline variant calling & annotation at scale: 26,000+ samples using GATK, VEP, and custom filtering pipelines.">WES / WGS Analysis</span>
+                        <span class="skill-badge primary" data-tooltip="Population-scale rare-variant burden testing using REGENIE; applied to 408,423 UK Biobank participants.">Rare-Variant Burden (REGENIE)</span>
                         <span class="skill-badge primary" data-tooltip="Bulk and single-cell RNA-seq: differential expression, pathway analysis, Seurat clustering and visualization.">RNA-Seq (Bulk & scRNA)</span>
-                        <span class="skill-badge secondary" data-tooltip="Statistical methods for genomic data: association studies, multiple testing correction, survival analysis.">Biostatistics</span>
-                        <span class="skill-badge secondary" data-tooltip="Analysis of protein expression data.">Proteomics</span>
-                        <span class="skill-badge secondary" data-tooltip="3D protein structure modeling and visualization.">Structural Biology</span>
+                        <span class="skill-badge primary" data-tooltip="Large-scale Olink proteomics analysis (n=46,362) for cis-pQTL validation of variant predictions.">Proteomics (Olink / pQTL)</span>
+                        <span class="skill-badge secondary" data-tooltip="Deep learning-based splice site effect prediction, integrated into the 5ULTRA scoring pipeline.">SpliceAI</span>
+                        <span class="skill-badge secondary" data-tooltip="Genome-wide association studies and statistical genetics methods.">GWAS / Statistical Genetics</span>
+                        <span class="skill-badge secondary" data-tooltip="5'UTR regulatory biology: uORFs, Kozak context, translational regulation.">5'UTR Biology</span>
+                        <span class="skill-badge secondary" data-tooltip="Working with gnomAD, UK Biobank, ClinVar, and COSMIC for variant annotation and benchmarking.">Population Databases</span>
                     </div>
                 </div>
 
@@ -312,7 +412,8 @@
                     <h3>Engineering & Infrastructure</h3>
                     <div class="skills-grid">
                         <span class="skill-badge primary" data-tooltip="Code versioning, collaboration, and CI workflows on GitHub & GitLab.">Version Control (Git)</span>
-                        <span class="skill-badge primary" data-tooltip="Large-scale analysis on HPC clusters using Slurm; experience managing compute-intensive ML training jobs.">Cluster Computing</span>
+                        <span class="skill-badge primary" data-tooltip="Large-scale analysis on HPC clusters using Slurm; experience managing compute-intensive ML training jobs.">Cluster Computing (HPC/SLURM)</span>
+                        <span class="skill-badge primary" data-tooltip="UK Biobank Research Analysis Platform on DNAnexus for cloud-scale WGS analysis.">DNAnexus / UKB RAP</span>
                         <span class="skill-badge secondary" data-tooltip="Reproducible workflow orchestration for multi-step bioinformatics pipelines.">Snakemake</span>
                         <span class="skill-badge secondary" data-tooltip="Containerization for reproducible research environments.">Docker / Singularity</span>
                         <span class="skill-badge secondary" data-tooltip="Environment management for complex Python and R dependency stacks.">Conda</span>
@@ -322,14 +423,20 @@
             <div class="education-column fade-in">
                 <h2>Education</h2>
                 <div class="education-item">
-                    <h3>PhD Candidate in Bioinformatics</h3>
-                    <p>Université Paris Cité, France | 2022 – 2026</p>
+                    <h3>PhD in Bioinformatics</h3>
+                    <p>Université Paris Cité, France | 2022 – December 2026 (Expected)</p>
+                    <p class="education-detail">Thesis: ML frameworks for genome-wide 5'UTR and splicing variant interpretation in human disease.</p>
+                    <p class="education-detail">Joint program: The Rockefeller University (New York) &amp; Imagine Institute (Paris). Advisors: Drs. Casanova, Cobat &amp; Zhang.</p>
                 </div>
                 <div class="education-item">
                     <h3>M.Sc. in Biotechnology Engineering</h3>
                     <p>Sup'Biotech, Paris, France | 2016 – 2021</p>
                     <p class="education-detail">Specialization in health data science.</p>
-                    <p class="education-detail">Exchange semester at UCSD.</p>
+                    <p class="education-detail">Exchange semester — Immunology &amp; Human Disease, UC San Diego, La Jolla, CA.</p>
+                </div>
+                <div class="education-item">
+                    <h3>Languages</h3>
+                    <p>French — Native &nbsp;·&nbsp; English — Fluent</p>
                 </div>
             </div>
         </div>

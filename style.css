@@ -449,11 +449,81 @@ h1 {
     font-family: var(--font-family-sans);
     font-size: clamp(0.95rem, 2vw, 1.15rem);
     line-height: 1.6;
-    margin-bottom: 30px;
+    margin-bottom: 28px;
     font-weight: 400;
     font-style: italic;
     text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4);
     max-width: 600px;
+}
+
+/* Hero stats bar */
+.hero-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 12px;
+    margin-bottom: 18px;
+}
+.hero-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+}
+.stat-number {
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1;
+    text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4);
+}
+.stat-label {
+    font-size: 0.68rem;
+    color: rgba(255, 255, 255, 0.55);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin-top: 5px;
+    white-space: nowrap;
+}
+.hero-stat-divider {
+    width: 1px;
+    height: 26px;
+    background: rgba(255, 255, 255, 0.18);
+    flex-shrink: 0;
+}
+
+/* Journal prestige strip */
+.hero-journals {
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 0.75rem;
+    margin-bottom: 16px;
+    letter-spacing: 0.03em;
+}
+.hero-journals em {
+    color: rgba(255, 255, 255, 0.72);
+    font-style: italic;
+}
+
+/* Availability indicator */
+.hero-seeking {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.82rem;
+    margin-bottom: 28px;
+    letter-spacing: 0.02em;
+}
+.hero-seeking::before {
+    content: '';
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #4ade80;
+    box-shadow: 0 0 7px rgba(74, 222, 128, 0.65);
+    margin-right: 7px;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
 }
 
 .contact-links {
@@ -543,6 +613,7 @@ h1 {
 /* --- 5. CONTENT SECTIONS --- */
 #experience,
 #publications,
+#conferences,
 #skills-education {
     padding: 80px 0;
     position: relative;
@@ -550,7 +621,9 @@ h1 {
     transition: background-color 0.3s ease;
 }
 
-#publications {
+#publications,
+#conferences,
+#skills-education {
     border-top: 1px solid var(--current-border-color);
 }
 
@@ -669,6 +742,31 @@ h1 {
     background-color: rgba(var(--rgb-primary), 0.1);
 }
 
+.publication-status-badge.in-prep {
+    border-color: #f59e0b;
+    color: #f59e0b;
+}
+
+[data-theme="light"] .publication-status-badge.in-prep {
+    background-color: rgba(245, 158, 11, 0.1);
+}
+
+.publication-card.featured.in-prep {
+    border-left-color: #f59e0b;
+}
+
+/* Research statement intro */
+.section-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: -30px auto 50px;
+    color: var(--current-text-light);
+    font-size: 0.98rem;
+    line-height: 1.75;
+    font-style: italic;
+    transition: color 0.3s ease;
+}
+
 .publication-links { 
     display: flex; 
     gap: 20px; 
@@ -679,8 +777,17 @@ h1 {
     text-decoration: none; 
     color: var(--primary-color); 
 }
-.publication-links a:hover { 
-    text-decoration: underline; 
+.publication-links a:hover {
+    text-decoration: underline;
+}
+
+.contribution-highlight a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+.contribution-highlight a:hover {
+    text-decoration: underline;
 }
 
 .timeline-item, .publication-card {
@@ -693,10 +800,70 @@ h1 {
     transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
 }
 
-.skills-education-grid { 
-    display: grid; 
-    grid-template-columns: 1.5fr 1fr; 
-    gap: 60px; 
+/* Conferences Section */
+.congress-grid {
+    display: grid;
+    gap: 16px;
+}
+.congress-card {
+    background: var(--current-bg-light);
+    border: 1px solid var(--current-border-color);
+    border-radius: 8px;
+    padding: 22px 26px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+.congress-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(120, 93, 254, 0.08), 0 1.5px 6px rgba(0,0,0,0.06);
+    background-color: var(--hover-bg, rgba(120, 93, 254, 0.06));
+}
+.congress-year {
+    background: var(--primary-color);
+    color: white;
+    font-weight: 700;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    padding: 5px 12px;
+    min-width: 50px;
+    text-align: center;
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+.congress-content {
+    flex: 1;
+}
+.congress-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+.congress-content h3 a {
+    color: inherit;
+    text-decoration: none;
+}
+.congress-content h3 a:hover {
+    color: var(--primary-color);
+}
+.congress-meta {
+    font-size: 0.9rem;
+    color: var(--current-text-light);
+    margin-bottom: 8px;
+}
+.congress-meta i {
+    margin-right: 5px;
+    width: 14px;
+    text-align: center;
+}
+.congress-content .publication-tag {
+    margin-bottom: 8px;
+}
+
+.skills-education-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 60px;
 }
 .skills-column h2, .education-column h2 { 
     text-align: left; 
@@ -894,6 +1061,17 @@ h1 {
 
 @media (max-width: 600px) {
     h1 { font-size: 2.5rem; }
+
+    /* Hero stats: drop dividers, tighten padding, smaller text */
+    .hero-stat-divider { display: none; }
+    .hero-stat { padding: 0 14px; }
+    .stat-number { font-size: 1.3rem; }
+    .stat-label { font-size: 0.62rem; }
+    .hero-stats { margin-bottom: 12px; }
+    .hero-journals { font-size: 0.7rem; margin-bottom: 12px; }
+    .hero-seeking { font-size: 0.78rem; margin-bottom: 20px; }
+    .section-intro { font-size: 0.92rem; margin: -10px auto 35px; }
+
     .nav-container {
       flex-direction: row;
       justify-content: space-between;
