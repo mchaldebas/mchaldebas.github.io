@@ -160,6 +160,32 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // --- Tooltip tap/keyboard support (touch + a11y) ---
+    const tooltipEls = document.querySelectorAll('[data-tooltip]');
+    tooltipEls.forEach(el => {
+        el.setAttribute('tabindex', '0');
+        el.setAttribute('role', 'button');
+        el.setAttribute('aria-label', el.textContent.trim() + ': ' + el.getAttribute('data-tooltip'));
+        el.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isActive = el.classList.contains('tooltip-active');
+            tooltipEls.forEach(other => other.classList.remove('tooltip-active'));
+            if (!isActive) el.classList.add('tooltip-active');
+        });
+        el.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                el.click();
+            } else if (e.key === 'Escape') {
+                el.classList.remove('tooltip-active');
+            }
+        });
+    });
+    // Dismiss active tooltips when tapping/clicking elsewhere
+    document.addEventListener('click', () => {
+        tooltipEls.forEach(el => el.classList.remove('tooltip-active'));
+    });
+
     // Update copyright year
     document.getElementById('copyright-year').innerHTML = `© ${new Date().getFullYear()} Matthieu Chaldebas. All Rights Reserved.`;
 
