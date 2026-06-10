@@ -47,7 +47,11 @@
   .rule{height:2px;background:var(--ink);width:46px;margin:14px auto 0;}
 
   .board{display:flex;flex-direction:column;gap:8px;margin-top:22px;}
-  .row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
+  .row{
+    display:grid;
+    grid-template-columns:repeat(4, minmax(0, 1fr)); /* Force les colonnes à être égales */
+    gap:8px;
+  }
 
   .tile{
     appearance:none;border:none;cursor:pointer;
@@ -56,10 +60,14 @@
     aspect-ratio:1/1;
     display:flex;align-items:center;justify-content:center;
     text-align:center;padding:4px;
-    font-weight:700;font-size:clamp(11px,3.6vw,16px);
+    font-weight:700;font-size:clamp(10px,3.5vw,16px); /* Légèrement réduit pour les petits écrans */
     text-transform:uppercase;letter-spacing:.01em;line-height:1.05;
     transition:transform .12s ease, background .12s ease, color .12s ease;
     user-select:none;
+    
+    /* NOUVELLES LIGNES POUR CORRIGER LE BUG */
+    word-break: break-word; /* Permet de couper les mots très longs */
+    hyphens: auto;          /* Ajoute automatiquement un tiret si le mot est coupé */
   }
   .tile:hover{background:var(--tile-press);}
   .tile:active{transform:scale(.95);}
