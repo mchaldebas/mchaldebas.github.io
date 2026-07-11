@@ -506,6 +506,21 @@ h1 {
 }
 
 /* Availability indicator */
+.hero-conference {
+    display: inline-block;
+    color: #fff;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    margin-bottom: 14px;
+    padding: 5px 14px;
+    border-radius: 14px;
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+.hero-conference i {
+    margin-right: 7px;
+}
 .hero-seeking {
     color: rgba(255, 255, 255, 0.6);
     font-size: 0.82rem;
